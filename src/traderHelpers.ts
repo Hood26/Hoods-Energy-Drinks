@@ -18,6 +18,18 @@ export class TraderHelper
      public addSingleItemsToTrader(tables: IDatabaseTables, traderId: string, assortCreator: FluentAssortCreator, container: DependencyContainer, logger: ILogger) : void {
         const vfs = container.resolve<VFS>("VFS")
         const config = jsonc.parse(vfs.readFile(path.resolve(__dirname, "../config/config.jsonc")))
+
+
+        assortCreator.createSingleAssortItem("65ccf66fc9162d12270bb181")
+               .addUnlimitedStackCount()
+               .addBuyRestriction(config.config['monster_blue_stock'])
+               .addMoneyCost(Money.ROUBLES, config.config['monster_blue_trader_price'])
+               .addLoyaltyLevel(config.config['monster_blue_loyalty_level'])
+               .export(tables.traders[traderId]);
+
+
+
+
         
         if (config.config['monster_blue_sold_by_trader']) {
              assortCreator.createSingleAssortItem("66ccf66fc9162d12270bb160")

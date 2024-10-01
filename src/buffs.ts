@@ -1,5 +1,5 @@
 export class Buffs {
-    public green_monster_buffs = [
+    public monster_green_buffs = [
         {
             "AbsoluteValue": true,
             "BuffType": "SkillRate",
@@ -64,7 +64,7 @@ export class Buffs {
             "Value": 0
         }
     ]
-    public blue_monster_buffs = [
+    public monster_blue_buffs = [
         {
             "AbsoluteValue": true,
             "BuffType": "StaminaRate",
@@ -148,7 +148,7 @@ export class Buffs {
         }
     ]
 
-    public white_monster_buffs = [
+    public monster_white_buffs = [
         {
             "AbsoluteValue": true,
             "BuffType": "SkillRate",
@@ -250,7 +250,7 @@ export class Buffs {
         }
     ]
 
-    public strawberry_monster_buffs = [
+    public monster_strawberry_buffs = [
         {
             "AbsoluteValue": true,
             "BuffType": "SkillRate",
@@ -370,7 +370,7 @@ export class Buffs {
         }
     ]
 
-    public ghost_energy_buffs = [
+    public ghost_buffs = [
         {
             "AbsoluteValue": true,
             "BuffType": "SkillRate",
@@ -463,7 +463,7 @@ export class Buffs {
         }
     ]
 
-    public nos_energy_buffs = [
+    public nos_buffs = [
         {
             "AbsoluteValue": true,
             "BuffType": "SkillRate",
@@ -538,7 +538,7 @@ export class Buffs {
         }
     ]
 
-    public punch_monster_buffs = [
+    public monster_punch_buffs = [
         {
             "AbsoluteValue": true,
             "BuffType": "SkillRate",
@@ -649,7 +649,7 @@ export class Buffs {
         }
     ]
 
-    public bang_energy_buffs = [
+    public bang_buffs = [
         {
             "AbsoluteValue": true,
             "BuffType": "SkillRate",
@@ -751,7 +751,7 @@ export class Buffs {
         }
     ]
 
-    public doctor_buffs = [
+    public monster_doctor_buffs = [
         {
             "AbsoluteValue": true,
             "BuffType": "SkillRate",
@@ -871,7 +871,7 @@ export class Buffs {
         }
     ]
 
-    public lemonade_monster_buffs = [
+    public monster_lemonade_buffs = [
         {
             "AbsoluteValue": true,
             "BuffType": "SkillRate",
@@ -1000,7 +1000,7 @@ export class Buffs {
         }
     ]
 
-    public redbull_original_buffs = [
+    public redbull_buffs = [
         {
             "AbsoluteValue": true,
             "BuffType": "SkillRate",

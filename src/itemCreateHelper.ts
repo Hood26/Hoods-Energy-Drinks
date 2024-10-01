@@ -6,46 +6,28 @@ import { VFS } from "@spt/utils/VFS";
 import { jsonc } from "jsonc";
 import path from "path";
 import { Buffs } from "./buffs";
+import { Info } from "./info";
 
 export class ItemCreateHelper {
 
     public config: any;
     public loot: Array<NewItemFromCloneDetails> = [];
+    public items: Array<string> = [
+
+    ];
 
     // Create customs Items and store them in the database
     public createItems(container: DependencyContainer) {
         const db: DatabaseServer = container.resolve<DatabaseServer>("DatabaseServer");
-        const vfs = container.resolve<VFS>("VFS");
+        const vfs: VFS = container.resolve<VFS>("VFS");
         this.config = jsonc.parse(vfs.readFile(path.resolve(__dirname, "../config/config.jsonc"))).config;
         const customItem = container.resolve<CustomItemService>("CustomItemService");
+        const info: Info = new Info();
+        const buffs: Buffs = new Buffs();
 
-        const buffs = new Buffs();
-        let green_monster_buffs: Array<any> = this.config['monster_green_effect_toggle'] ? buffs.green_monster_buffs : [];
-        let blue_monster_buffs: Array<any> = this.config['monster_blue_effect_toggle'] ? buffs.blue_monster_buffs : [];
-        let white_monster_buffs: Array<any> = this.config['monster_white_effect_toggle'] ? buffs.white_monster_buffs : [];
-        let strawberry_monster_buffs: Array<any> = this.config['monster_strawberry_effect_toggle'] ? buffs.strawberry_monster_buffs : [];
-        let ghost_energy_buffs: Array<any> = this.config['ghost_effect_toggle'] ? buffs.ghost_energy_buffs : [];
-        let nos_energy_buffs: Array<any> = this.config['nos_effect_toggle'] ? buffs.nos_energy_buffs : [];
-        let punch_monster_buffs: Array<any> = this.config['monster_punch_effect_toggle'] ? buffs.punch_monster_buffs : [];
-        let bang_energy_buffs: Array<any> = this.config['bang_effect_toggle'] ? buffs.bang_energy_buffs : [];
-        let doctor_buffs: Array<any> = this.config['monster_doctor_effect_toggle'] ? buffs.doctor_buffs : [];
-        let lemonade_monster_buffs: Array<any> = this.config['monster_lemonade_effect_toggle'] ? buffs.lemonade_monster_buffs : [];
-        let redbull_original_buffs: Array<any> = this.config['redbull_effect_toggle'] ? buffs.redbull_original_buffs : [];
-        let redbull_watermelon_buffs: Array<any> = this.config['redbull_watermelon_effect_toggle'] ? buffs.redbull_watermelon_buffs : [];
-
-        // Add the custom buff to globals config
-        db.tableData.globals.config.Health.Effects.Stimulator.Buffs["Buffs_drink_monster_energy"] = green_monster_buffs;
-        db.tableData.globals.config.Health.Effects.Stimulator.Buffs["Buffs_drink_blue_monster_energy"] = blue_monster_buffs;
-        db.tableData.globals.config.Health.Effects.Stimulator.Buffs["Buffs_drink_monster_white_energy"] = white_monster_buffs;
-        db.tableData.globals.config.Health.Effects.Stimulator.Buffs["Buffs_drink_monster_strawberry_energy"] = strawberry_monster_buffs;
-        db.tableData.globals.config.Health.Effects.Stimulator.Buffs["Buffs_drink_ghost_energy"] = ghost_energy_buffs;
-        db.tableData.globals.config.Health.Effects.Stimulator.Buffs["Buffs_drink_nos_energy"] = nos_energy_buffs;
-        db.tableData.globals.config.Health.Effects.Stimulator.Buffs["Buffs_drink_monster_lemonade_energy"] = lemonade_monster_buffs;
-        db.tableData.globals.config.Health.Effects.Stimulator.Buffs["Buffs_drink_bang_energy"] = bang_energy_buffs;
-        db.tableData.globals.config.Health.Effects.Stimulator.Buffs["Buffs_drink_monster_doctor_energy"] = doctor_buffs;
-        db.tableData.globals.config.Health.Effects.Stimulator.Buffs["Buffs_drink_monster_punch_energy"] = punch_monster_buffs;
-        db.tableData.globals.config.Health.Effects.Stimulator.Buffs["Buffs_drink_redbull_original_energy"] = redbull_original_buffs;
-        db.tableData.globals.config.Health.Effects.Stimulator.Buffs["Buffs_drink_redbull_watermelon_energy"] = redbull_watermelon_buffs;
+        for (let item of info.drink_info) {
+            db.tableData.globals.config.Health.Effects.Stimulator.Buffs[item] = this.config[`${item}_effect_toggle`] ? buffs[`${item}_buffs`] : []
+        }
 
         const monester_energy: NewItemFromCloneDetails = {
             itemTplToClone: "5d40407c86f774318526545a",
@@ -58,8 +40,9 @@ export class ItemCreateHelper {
                     path: "assets/monster_energy_container.bundle",
                     rcid: ""
                 },
+                Weight: 0.6,
                 foodUseTime: 5,
-                StimulatorBuffs: "Buffs_drink_monster_energy",
+                StimulatorBuffs: "monster_green",
                 effects_health: {
                     Hydration: {
                         value: 30
@@ -107,8 +90,9 @@ export class ItemCreateHelper {
                     path: "assets/monster_energy_blue_container.bundle",
                     rcid: ""
                 },
+                Weight: 0.6,
                 foodUseTime: 5,
-                StimulatorBuffs: "Buffs_drink_blue_monster_energy",
+                StimulatorBuffs: "monster_blue",
                 effects_health: {
                     Hydration: {
                         value: 30
@@ -152,12 +136,13 @@ export class ItemCreateHelper {
                     path: "assets/monster_energy_white.bundle",
                     rcid: ""
                 },
+                Weight: 0.6,
                 UsePrefab: {
                     path: "assets/monster_energy_white_container.bundle",
                     rcid: ""
                 },
                 foodUseTime: 5,
-                StimulatorBuffs: "Buffs_drink_monster_white_energy",
+                StimulatorBuffs: "monster_white",
                 effects_health: {
                     Hydration: {
                         value: 30
@@ -205,8 +190,9 @@ export class ItemCreateHelper {
                     path: "assets/monster_energy_strawberry_container.bundle",
                     rcid: ""
                 },
+                Weight: 0.6,
                 foodUseTime: 5,
-                StimulatorBuffs: "Buffs_drink_monster_strawberry_energy",
+                StimulatorBuffs: "monster_strawberry",
                 effects_health: {
                     Hydration: {
                         value: 40
@@ -254,8 +240,9 @@ export class ItemCreateHelper {
                     path: "assets/ghost_energy_container.bundle",
                     rcid: ""
                 },
+                Weight: 0.6,
                 foodUseTime: 5,
-                StimulatorBuffs: "Buffs_drink_ghost_energy",
+                StimulatorBuffs: "ghost",
                 effects_health: {
                     Hydration: {
                         value: 40
@@ -303,8 +290,9 @@ export class ItemCreateHelper {
                     path: "assets/nos_energy_container.bundle",
                     rcid: ""
                 },
+                Weight: 0.6,
                 foodUseTime: 5,
-                StimulatorBuffs: "Buffs_drink_nos_energy",
+                StimulatorBuffs: "nos",
                 effects_health: {
                     Hydration: {
                         value: 40
@@ -352,8 +340,9 @@ export class ItemCreateHelper {
                     path: "assets/monster_energy_punch_container.bundle",
                     rcid: ""
                 },
+                Weight: 0.6,
                 foodUseTime: 5,
-                StimulatorBuffs: "Buffs_drink_monster_punch_energy",
+                StimulatorBuffs: "monster_punch",
                 effects_health: {
                     Hydration: {
                         value: 40
@@ -401,8 +390,9 @@ export class ItemCreateHelper {
                     path: "assets/bang_energy_container.bundle",
                     rcid: ""
                 },
+                Weight: 0.6,
                 foodUseTime: 5,
-                StimulatorBuffs: "Buffs_drink_bang_energy",
+                StimulatorBuffs: "bang",
                 effects_health: {
                     Hydration: {
                         value: 40
@@ -450,8 +440,9 @@ export class ItemCreateHelper {
                     path: "assets/monster_energy_doctor_container.bundle",
                     rcid: ""
                 },
+                Weight: 0.6,
                 foodUseTime: 5,
-                StimulatorBuffs: "Buffs_drink_monster_doctor_energy",
+                StimulatorBuffs: "monster_doctor",
                 effects_health: {
                     Hydration: {
                         value: 40
@@ -499,8 +490,9 @@ export class ItemCreateHelper {
                     path: "assets/monster_energy_lemonade_container.bundle",
                     rcid: ""
                 },
+                Weight: 0.6,
                 foodUseTime: 5,
-                StimulatorBuffs: "Buffs_drink_monster_lemonade_energy",
+                StimulatorBuffs: "monster_lemonade",
                 effects_health: {
                     Hydration: {
                         value: 60
@@ -548,8 +540,9 @@ export class ItemCreateHelper {
                     path: "assets/redbull_energy_container.bundle",
                     rcid: ""
                 },
+                Weight: 0.4,
                 foodUseTime: 5,
-                StimulatorBuffs: "Buffs_drink_redbull_original_energy",
+                StimulatorBuffs: "redbull_original",
                 effects_health: {
                     Hydration: {
                         value: 30
@@ -597,8 +590,9 @@ export class ItemCreateHelper {
                     path: "assets/redbull_watermelon_energy_container.bundle",
                     rcid: ""
                 },
+                Weight: 0.4,
                 foodUseTime: 5,
-                StimulatorBuffs: "Buffs_drink_redbull_watermelon_energy",
+                StimulatorBuffs: "redbull_watermelon",
                 effects_health: {
                     Hydration: {
                         value: 40
@@ -632,10 +626,58 @@ export class ItemCreateHelper {
             },
             looseLootSpawnWeight: this.config["redbull_watermelon_loose_loot_multiplier"]
         }
+        const soda_orange_fanta: NewItemFromCloneDetails = {
+            itemTplToClone: "5751496424597720a27126da",
+            overrideProperties: {
+                Prefab: {
+                    path: "assets/soda_orange_fanta.bundle",
+                    rcid: ""
+                },
+                UsePrefab: {
+                    path: "assets/soda_orange_fanta_container.bundle",
+                    rcid: ""
+                },
+                Weight: 0.3,
+                foodUseTime: 5,
+                StimulatorBuffs: "redbull_watermelon",
+                effects_health: {
+                    Hydration: {
+                        value: 40
+                    },
+                    Energy: {
+                        value: 80
+                    }
+                },
+                effects_damage: {
+                    
+                }
+            },
+            parentId: "5448e8d64bdc2dce718b4568",
+            newId: "65ccf66fc9162d12270bb181", 
+            fleaPriceRoubles: this.config['redbull_watermelon_flea_price'],
+            handbookPriceRoubles: 95000,
+            handbookParentId: "5b47574386f77428ca22b335",
+            locales: {
+                "en": {
+                    name: "soda_orange_fanta",
+                    shortName: "soda_orange_fanta",
+                    description: `soda_orange_fanta.`
+                }
+            },
+            addToStaticLoot: {
+                "578f87a3245977356274f2cb": this.config["redbull_watermelon_loot_duffle_bag_weight"],
+                "5909e4b686f7747f5b744fa4": this.config["redbull_watermelon_loot_dead_scav_weight"],
+                "578f8778245977358849a9b5": this.config["redbull_watermelon_loot_jacket_weight"],
+                "5d6fd13186f77424ad2a8c69": this.config["redbull_watermelon_loot_ration_supply_crate_weight"],
+                "5d6d2b5486f774785c2ba8ea": this.config["redbull_watermelon_loot_ground_cache_weight"],
+            },
+            looseLootSpawnWeight: this.config["redbull_watermelon_loose_loot_multiplier"]
+        }
 
         this.loot.push(redbull_watermelon_energy);
 
         
+        //customItem.createItemFromClone(soda_orange_fanta);
         customItem.createItemFromClone(monester_energy);
         customItem.createItemFromClone(monester_energy_blue);
         customItem.createItemFromClone(monester_energy_white);
