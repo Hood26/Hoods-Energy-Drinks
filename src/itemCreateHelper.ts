@@ -542,7 +542,7 @@ export class ItemCreateHelper {
                 },
                 Weight: 0.4,
                 foodUseTime: 5,
-                StimulatorBuffs: "redbull_original",
+                StimulatorBuffs: "redbull",
                 effects_health: {
                     Hydration: {
                         value: 30
@@ -626,58 +626,7 @@ export class ItemCreateHelper {
             },
             looseLootSpawnWeight: this.config["redbull_watermelon_loose_loot_multiplier"]
         }
-        const soda_orange_fanta: NewItemFromCloneDetails = {
-            itemTplToClone: "5751496424597720a27126da",
-            overrideProperties: {
-                Prefab: {
-                    path: "assets/soda_orange_fanta.bundle",
-                    rcid: ""
-                },
-                UsePrefab: {
-                    path: "assets/soda_orange_fanta_container.bundle",
-                    rcid: ""
-                },
-                Weight: 0.3,
-                foodUseTime: 5,
-                StimulatorBuffs: "redbull_watermelon",
-                effects_health: {
-                    Hydration: {
-                        value: 40
-                    },
-                    Energy: {
-                        value: 80
-                    }
-                },
-                effects_damage: {
-                    
-                }
-            },
-            parentId: "5448e8d64bdc2dce718b4568",
-            newId: "65ccf66fc9162d12270bb181", 
-            fleaPriceRoubles: this.config['redbull_watermelon_flea_price'],
-            handbookPriceRoubles: 95000,
-            handbookParentId: "5b47574386f77428ca22b335",
-            locales: {
-                "en": {
-                    name: "soda_orange_fanta",
-                    shortName: "soda_orange_fanta",
-                    description: `soda_orange_fanta.`
-                }
-            },
-            addToStaticLoot: {
-                "578f87a3245977356274f2cb": this.config["redbull_watermelon_loot_duffle_bag_weight"],
-                "5909e4b686f7747f5b744fa4": this.config["redbull_watermelon_loot_dead_scav_weight"],
-                "578f8778245977358849a9b5": this.config["redbull_watermelon_loot_jacket_weight"],
-                "5d6fd13186f77424ad2a8c69": this.config["redbull_watermelon_loot_ration_supply_crate_weight"],
-                "5d6d2b5486f774785c2ba8ea": this.config["redbull_watermelon_loot_ground_cache_weight"],
-            },
-            looseLootSpawnWeight: this.config["redbull_watermelon_loose_loot_multiplier"]
-        }
 
-        this.loot.push(redbull_watermelon_energy);
-
-        
-        //customItem.createItemFromClone(soda_orange_fanta);
         customItem.createItemFromClone(monester_energy);
         customItem.createItemFromClone(monester_energy_blue);
         customItem.createItemFromClone(monester_energy_white);

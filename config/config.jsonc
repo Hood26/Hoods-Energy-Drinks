@@ -1,20 +1,34 @@
 {
   // All values can be changed and will be reflected in game on server restart
+  // Mostly true or false values, but some are integers
 
   "config": {
+    // if true, energy drink will be enabled in the game
     "monster_blue_enable": true,
+    // if true, energy drink will have skill effect buffs on consumption. skill effect buffs can be configured in buffs.ts
     "monster_blue_effect_toggle": true,
+    // if true, energy drink will be sold by Therapist
     "monster_blue_sold_by_trader": true,
+    // price from Therapist
     "monster_blue_trader_price": 40000,
+    // price on the flea market
     "monster_blue_flea_price": 55000,
+    // amount sold by Therapist
     "monster_blue_stock": 2,
+    // loyalty level required to purchase from Therapist
     "monster_blue_loyalty_level": 1,
-    "monster_blue_loot_duffle_bag_weight": 200, // lower = more rare, higher = more common
-    "monster_blue_loot_dead_scav_weight": 200, // lower = more rare, higher = more common
-    "monster_blue_loot_jacket_weight": 200, // lower = more rare, higher = more common
-    "monster_blue_loot_ration_supply_crate_weight": 200, // lower = more rare, higher = more common
-    "monster_blue_loot_ground_cache_weight": 150, // lower = more rare, higher = more common
-    "monster_blue_loose_loot_multiplier": 0.3, // 0.3 multiplied by max energy drink spawn chance = custom energy drink spawn chance in loose loot around the map 
+    // weighted chance for energy drink to spawn in duffle bags, lower = more rare, higher = more common
+    "monster_blue_loot_duffle_bag_weight": 200,
+    // weighted chance for energy drink to spawn in dead scavs, lower = more rare, higher = more common
+    "monster_blue_loot_dead_scav_weight": 200,
+    // weighted chance for energy drink to spawn in jackets, lower = more rare, higher = more common
+    "monster_blue_loot_jacket_weight": 200,
+    // weighted chance for energy drink to spawn in ration supply crates, lower = more rare, higher = more common
+    "monster_blue_loot_ration_supply_crate_weight": 200,
+    // weighted chance for energy drink to spawn in ground caches, lower = more rare, higher = more common
+    "monster_blue_loot_ground_cache_weight": 150,
+    // 0.3 multiplied by max energy drink spawn chance = custom energy drink spawn chance in loose loot around the map 
+    "monster_blue_loose_loot_multiplier": 0.3,
 
     "monster_green_enable": true,
     "monster_green_effect_toggle": true,
@@ -29,7 +43,6 @@
     "monster_green_loot_ration_supply_crate_weight": 175,
     "monster_green_loot_ground_cache_weight": 140,
     "monster_green_loose_loot_multiplier": 0.23,
-    
 
     "monster_white_enable": true,
     "monster_white_effect_toggle": true,
@@ -58,20 +71,6 @@
     "monster_strawberry_loot_ration_supply_crate_weight": 150,
     "monster_strawberry_loot_ground_cache_weight": 150,
     "monster_strawberry_loose_loot_multiplier": 0.18,
-
-    "redbull_enable": true,
-    "redbull_effect_toggle": true,
-    "redbull_sold_by_trader": true,
-    "redbull_trader_price": 65000,
-    "redbull_flea_price": 85000,
-    "redbull_stock": 1,
-    "redbull_loyalty_level": 3,
-    "redbull_loot_duffle_bag_weight": 150,
-    "redbull_loot_dead_scav_weight": 150,
-    "redbull_loot_jacket_weight": 150,
-    "redbull_loot_ration_supply_crate_weight": 150,
-    "redbull_loot_ground_cache_weight": 150,
-    "redbull_loose_loot_multiplier": 0.18,
     
     "ghost_enable": true,
     "ghost_effect_toggle": true,
@@ -128,6 +127,20 @@
     "bang_loot_ration_supply_crate_weight": 105,
     "bang_loot_ground_cache_weight": 105,
     "bang_loot_loose_loot_multiplier": 0.15,
+
+    "redbull_enable": true,
+    "redbull_effect_toggle": true,
+    "redbull_sold_by_trader": true,
+    "redbull_trader_price": 65000,
+    "redbull_flea_price": 85000,
+    "redbull_stock": 1,
+    "redbull_loyalty_level": 3,
+    "redbull_loot_duffle_bag_weight": 150,
+    "redbull_loot_dead_scav_weight": 150,
+    "redbull_loot_jacket_weight": 150,
+    "redbull_loot_ration_supply_crate_weight": 150,
+    "redbull_loot_ground_cache_weight": 150,
+    "redbull_loose_loot_multiplier": 0.18,
 
     "redbull_watermelon_enable": true,
     "redbull_watermelon_effect_toggle": true,
