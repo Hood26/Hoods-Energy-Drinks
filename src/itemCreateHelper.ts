@@ -529,6 +529,156 @@ export class ItemCreateHelper {
 
         this.loot.push(monester_energy_lemonade);
 
+        const starbucks_energy: NewItemFromCloneDetails = {
+            itemTplToClone: "5d40407c86f774318526545a",
+            overrideProperties: {
+                Prefab: {
+                    path: "assets/starbucks_energy.bundle",
+                    rcid: ""
+                },
+                UsePrefab: {
+                    path: "assets/starbucks_energy_container.bundle",
+                    rcid: ""
+                },
+                Weight: 0.3,
+                foodUseTime: 5,
+                StimulatorBuffs: "starbucks",
+                effects_health: {
+                    Hydration: {
+                        value: 30
+                    },
+                    Energy: {
+                        value: 60
+                    }
+                },
+                effects_damage: {
+                    
+                }
+            },
+            parentId: "5448e8d64bdc2dce718b4568",
+            newId: "66ccf66fc9162d12270bb180", 
+            fleaPriceRoubles: this.config['starbucks_flea_price'],
+            handbookPriceRoubles: 65000,
+            handbookParentId: "5b47574386f77428ca22b335",
+            locales: {
+                "en": {
+                    name: "Starbucks Double Shot Energy Drink",
+                    shortName: "Starbucks",
+                    description: `Starbucks`
+                }
+            },
+            addToStaticLoot: {
+                "578f87a3245977356274f2cb": this.config["starbucks_loot_duffle_bag_weight"],
+                "5909e4b686f7747f5b744fa4": this.config["starbucks_loot_dead_scav_weight"],
+                "578f8778245977358849a9b5": this.config["starbucks_loot_jacket_weight"],
+                "5d6fd13186f77424ad2a8c69": this.config["starbucks_loot_ration_supply_crate_weight"],
+                "5d6d2b5486f774785c2ba8ea": this.config["starbucks_loot_ground_cache_weight"],
+            },
+            looseLootSpawnWeight: this.config["starbucks_loose_loot_multiplier"]
+        }
+
+        this.loot.push(starbucks_energy);
+
+        const c4_starburst_energy: NewItemFromCloneDetails = {
+            itemTplToClone: "5d40407c86f774318526545a",
+            overrideProperties: {
+                Prefab: {
+                    path: "assets/c4_starburst_energy.bundle",
+                    rcid: ""
+                },
+                UsePrefab: {
+                    path: "assets/c4_starburst_energy_container.bundle",
+                    rcid: ""
+                },
+                Weight: 0.3,
+                foodUseTime: 5,
+                StimulatorBuffs: "c4_starburst",
+                effects_health: {
+                    Hydration: {
+                        value: 30
+                    },
+                    Energy: {
+                        value: 60
+                    }
+                },
+                effects_damage: {
+                    
+                }
+            },
+            parentId: "5448e8d64bdc2dce718b4568",
+            newId: "66ccf66fc9162d12270bb181", 
+            fleaPriceRoubles: this.config['c4_starburst_flea_price'],
+            handbookPriceRoubles: 65000,
+            handbookParentId: "5b47574386f77428ca22b335",
+            locales: {
+                "en": {
+                    name: "C4 Starburst Energy Drink",
+                    shortName: "Starburst",
+                    description: `C4 Starburst`
+                }
+            },
+            addToStaticLoot: {
+                "578f87a3245977356274f2cb": this.config["c4_starburst_loot_duffle_bag_weight"],
+                "5909e4b686f7747f5b744fa4": this.config["c4_starburst_loot_dead_scav_weight"],
+                "578f8778245977358849a9b5": this.config["c4_starburst_loot_jacket_weight"],
+                "5d6fd13186f77424ad2a8c69": this.config["c4_starburst_loot_ration_supply_crate_weight"],
+                "5d6d2b5486f774785c2ba8ea": this.config["c4_starburst_loot_ground_cache_weight"],
+            },
+            looseLootSpawnWeight: this.config["c4_starburst_loose_loot_multiplier"]
+        }
+
+        this.loot.push(c4_starburst_energy);
+
+        const rockstar_energy: NewItemFromCloneDetails = {
+            itemTplToClone: "5d40407c86f774318526545a",
+            overrideProperties: {
+                Prefab: {
+                    path: "assets/rockstar_energy.bundle",
+                    rcid: ""
+                },
+                UsePrefab: {
+                    path: "assets/rockstar_energy_container.bundle",
+                    rcid: ""
+                },
+                Weight: 0.3,
+                foodUseTime: 5,
+                StimulatorBuffs: "rockstar",
+                effects_health: {
+                    Hydration: {
+                        value: 30
+                    },
+                    Energy: {
+                        value: 60
+                    }
+                },
+                effects_damage: {
+                    
+                }
+            },
+            parentId: "5448e8d64bdc2dce718b4568",
+            newId: "66ccf66fc9162d12270bb182", 
+            fleaPriceRoubles: this.config['rockstar_flea_price'],
+            handbookPriceRoubles: 65000,
+            handbookParentId: "5b47574386f77428ca22b335",
+            locales: {
+                "en": {
+                    name: "Rockstar Energy Drink",
+                    shortName: "Rockstar",
+                    description: `Rockstar is scientifically formulated to provide an incredible energy boost for those who lead active and exhausting lifestyles-from athletes to rock stars. Put in the work with our original energy drink, fully-charged with B-vitamins and formulated with guarana, taurine, and caffeine to help keep you going and stay focused* with invigorating taste.`
+                }
+            },
+            addToStaticLoot: {
+                "578f87a3245977356274f2cb": this.config["rockstar_loot_duffle_bag_weight"],
+                "5909e4b686f7747f5b744fa4": this.config["rockstar_loot_dead_scav_weight"],
+                "578f8778245977358849a9b5": this.config["rockstar_loot_jacket_weight"],
+                "5d6fd13186f77424ad2a8c69": this.config["rockstar_loot_ration_supply_crate_weight"],
+                "5d6d2b5486f774785c2ba8ea": this.config["rockstar_loot_ground_cache_weight"],
+            },
+            looseLootSpawnWeight: this.config["rockstar_loose_loot_multiplier"]
+        }
+
+        this.loot.push(rockstar_energy);
+
         const redbull_energy: NewItemFromCloneDetails = {
             itemTplToClone: "5751496424597720a27126da",
             overrideProperties: {
@@ -540,7 +690,7 @@ export class ItemCreateHelper {
                     path: "assets/redbull_energy_container.bundle",
                     rcid: ""
                 },
-                Weight: 0.4,
+                Weight: 0.3,
                 foodUseTime: 5,
                 StimulatorBuffs: "redbull",
                 effects_health: {
@@ -556,7 +706,7 @@ export class ItemCreateHelper {
                 }
             },
             parentId: "5448e8d64bdc2dce718b4568",
-            newId: "66ccf66fc9162d12270bb180", 
+            newId: "66ccf66fc9162d12270bb183", 
             fleaPriceRoubles: this.config['redbull_flea_price'],
             handbookPriceRoubles: 65000,
             handbookParentId: "5b47574386f77428ca22b335",
@@ -606,7 +756,7 @@ export class ItemCreateHelper {
                 }
             },
             parentId: "5448e8d64bdc2dce718b4568",
-            newId: "66ccf66fc9162d12270bb181", 
+            newId: "66ccf66fc9162d12270bb184", 
             fleaPriceRoubles: this.config['redbull_watermelon_flea_price'],
             handbookPriceRoubles: 95000,
             handbookParentId: "5b47574386f77428ca22b335",
@@ -637,6 +787,9 @@ export class ItemCreateHelper {
         customItem.createItemFromClone(nos_energy);
         customItem.createItemFromClone(bang_energy);
         customItem.createItemFromClone(ghost_energy);
+        customItem.createItemFromClone(starbucks_energy);
+        customItem.createItemFromClone(c4_starburst_energy);
+        customItem.createItemFromClone(rockstar_energy);
         customItem.createItemFromClone(redbull_energy);
         customItem.createItemFromClone(redbull_watermelon_energy);
     }

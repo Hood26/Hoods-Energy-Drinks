@@ -1000,6 +1000,258 @@ export class Buffs {
         }
     ]
 
+    public rockstar_buffs = [
+        {
+            "AbsoluteValue": true,
+            "BuffType": "SkillRate",
+            "Chance": 1,
+            "Delay": 0,
+            "Duration": 140,
+            "SkillName": "Endurance",
+            "Value": 25
+        },
+        {
+            "AbsoluteValue": true,
+            "BuffType": "SkillRate",
+            "Chance": 1,
+            "Delay": 0,
+            "Duration": 140,
+            "SkillName": "Strength",
+            "Value": 25
+        },
+        {
+            "AbsoluteValue": true,
+            "BuffType": "StaminaRate",
+            "Chance": 1,
+            "Delay": 0,
+            "Duration": 140,
+            "SkillName": "",
+            "Value": 2.5
+        },
+        {
+            "AbsoluteValue": true,
+            "BuffType": "MaxStamina",
+            "Chance": 1,
+            "Delay": 0,
+            "Duration": 140,
+            "SkillName": "",
+            "Value": 20
+        },
+        {
+            "AbsoluteValue": false,
+            "BuffType": "WeightLimit",
+            "Chance": 1,
+            "Delay": 1,
+            "Duration": 140,
+            "SkillName": "",
+            "Value": 0.10
+          },
+        {
+            "AbsoluteValue": true,
+            "BuffType": "SkillRate",
+            "Chance": 1,
+            "Delay": 140,
+            "Duration": 120,
+            "SkillName": "Health",
+            "Value": -10
+        },
+        {
+            "AbsoluteValue": true,
+            "BuffType": "SkillRate",
+            "Chance": 1,
+            "Delay": 140,
+            "Duration": 120,
+            "SkillName": "Vitality",
+            "Value": -10
+        },
+        {
+            "AbsoluteValue": true,
+            "BuffType": "EnergyRate",
+            "Chance": 1,
+            "Delay": 140,
+            "Duration": 60,
+            "SkillName": "",
+            "Value": -1
+        },
+        {
+            "AbsoluteValue": true,
+            "BuffType": "HandsTremor",
+            "Chance": 1,
+            "Delay": 140,
+            "Duration": 120,
+            "SkillName": "",
+            "Value": 0
+        }
+    ]
+
+    public starbucks_buffs = [
+        {
+            "AbsoluteValue": true,
+            "BuffType": "SkillRate",
+            "Chance": 1,
+            "Delay": 0,
+            "Duration": 140,
+            "SkillName": "Endurance",
+            "Value": 25
+        },
+        {
+            "AbsoluteValue": true,
+            "BuffType": "SkillRate",
+            "Chance": 1,
+            "Delay": 0,
+            "Duration": 140,
+            "SkillName": "Strength",
+            "Value": 25
+        },
+        {
+            "AbsoluteValue": true,
+            "BuffType": "StaminaRate",
+            "Chance": 1,
+            "Delay": 0,
+            "Duration": 140,
+            "SkillName": "",
+            "Value": 2.5
+        },
+        {
+            "AbsoluteValue": true,
+            "BuffType": "MaxStamina",
+            "Chance": 1,
+            "Delay": 0,
+            "Duration": 140,
+            "SkillName": "",
+            "Value": 20
+        },
+        {
+            "AbsoluteValue": false,
+            "BuffType": "WeightLimit",
+            "Chance": 1,
+            "Delay": 1,
+            "Duration": 140,
+            "SkillName": "",
+            "Value": 0.10
+          },
+        {
+            "AbsoluteValue": true,
+            "BuffType": "SkillRate",
+            "Chance": 1,
+            "Delay": 140,
+            "Duration": 120,
+            "SkillName": "Health",
+            "Value": -10
+        },
+        {
+            "AbsoluteValue": true,
+            "BuffType": "SkillRate",
+            "Chance": 1,
+            "Delay": 140,
+            "Duration": 120,
+            "SkillName": "Vitality",
+            "Value": -10
+        },
+        {
+            "AbsoluteValue": true,
+            "BuffType": "EnergyRate",
+            "Chance": 1,
+            "Delay": 140,
+            "Duration": 60,
+            "SkillName": "",
+            "Value": -1
+        },
+        {
+            "AbsoluteValue": true,
+            "BuffType": "HandsTremor",
+            "Chance": 1,
+            "Delay": 140,
+            "Duration": 120,
+            "SkillName": "",
+            "Value": 0
+        }
+    ]
+
+    public c4_starburst_buffs = [
+        {
+            "AbsoluteValue": true,
+            "BuffType": "SkillRate",
+            "Chance": 1,
+            "Delay": 0,
+            "Duration": 140,
+            "SkillName": "Endurance",
+            "Value": 25
+        },
+        {
+            "AbsoluteValue": true,
+            "BuffType": "SkillRate",
+            "Chance": 1,
+            "Delay": 0,
+            "Duration": 140,
+            "SkillName": "Strength",
+            "Value": 25
+        },
+        {
+            "AbsoluteValue": true,
+            "BuffType": "StaminaRate",
+            "Chance": 1,
+            "Delay": 0,
+            "Duration": 140,
+            "SkillName": "",
+            "Value": 2.5
+        },
+        {
+            "AbsoluteValue": true,
+            "BuffType": "MaxStamina",
+            "Chance": 1,
+            "Delay": 0,
+            "Duration": 140,
+            "SkillName": "",
+            "Value": 20
+        },
+        {
+            "AbsoluteValue": false,
+            "BuffType": "WeightLimit",
+            "Chance": 1,
+            "Delay": 1,
+            "Duration": 140,
+            "SkillName": "",
+            "Value": 0.10
+          },
+        {
+            "AbsoluteValue": true,
+            "BuffType": "SkillRate",
+            "Chance": 1,
+            "Delay": 140,
+            "Duration": 120,
+            "SkillName": "Health",
+            "Value": -10
+        },
+        {
+            "AbsoluteValue": true,
+            "BuffType": "SkillRate",
+            "Chance": 1,
+            "Delay": 140,
+            "Duration": 120,
+            "SkillName": "Vitality",
+            "Value": -10
+        },
+        {
+            "AbsoluteValue": true,
+            "BuffType": "EnergyRate",
+            "Chance": 1,
+            "Delay": 140,
+            "Duration": 60,
+            "SkillName": "",
+            "Value": -1
+        },
+        {
+            "AbsoluteValue": true,
+            "BuffType": "HandsTremor",
+            "Chance": 1,
+            "Delay": 140,
+            "Duration": 120,
+            "SkillName": "",
+            "Value": 0
+        }
+    ]
+
     public redbull_buffs = [
         {
             "AbsoluteValue": true,

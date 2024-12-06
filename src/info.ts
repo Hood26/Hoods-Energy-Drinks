@@ -10,6 +10,9 @@ export class Info {
         'bang',
         'monster_doctor',
         'monster_lemonade',
+        'starbucks',
+        'c4_starburst',
+        'rockstar',
         'redbull',
         'redbull_watermelon'
     ]

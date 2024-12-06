@@ -99,8 +99,32 @@ export class TraderHelper
                                      .addLoyaltyLevel(config['monster_lemonade_loyalty_level'])
                                      .export(tables.traders[traderId]);
         }
-        if (config['redbull_sold_by_trader']) {
+        if (config['starbucks_sold_by_trader']) {
              assortCreator.createSingleAssortItem("66ccf66fc9162d12270bb180")
+                                     .addUnlimitedStackCount()
+                                     .addBuyRestriction(config['starbucks_stock'])
+                                     .addMoneyCost(Money.ROUBLES, config['starbucks_trader_price'])
+                                     .addLoyaltyLevel(config['starbucks_loyalty_level'])
+                                     .export(tables.traders[traderId]);
+        }
+        if (config['rockstar_sold_by_trader']) {
+             assortCreator.createSingleAssortItem("66ccf66fc9162d12270bb181")
+                                     .addUnlimitedStackCount()
+                                     .addBuyRestriction(config['rockstar_stock'])
+                                     .addMoneyCost(Money.ROUBLES, config['rockstar_trader_price'])
+                                     .addLoyaltyLevel(config['rockstar_loyalty_level'])
+                                     .export(tables.traders[traderId]);
+        }
+        if (config['c4_starburst_sold_by_trader']) {
+             assortCreator.createSingleAssortItem("66ccf66fc9162d12270bb182")
+                                     .addUnlimitedStackCount()
+                                     .addBuyRestriction(config['c4_starburst_stock'])
+                                     .addMoneyCost(Money.ROUBLES, config['c4_starburst_trader_price'])
+                                     .addLoyaltyLevel(config['c4_starburst_loyalty_level'])
+                                     .export(tables.traders[traderId]);
+        }
+        if (config['redbull_sold_by_trader']) {
+             assortCreator.createSingleAssortItem("66ccf66fc9162d12270bb183")
                                      .addUnlimitedStackCount()
                                      .addBuyRestriction(config['redbull_stock'])
                                      .addMoneyCost(Money.ROUBLES, config['redbull_trader_price'])
@@ -108,7 +132,7 @@ export class TraderHelper
                                      .export(tables.traders[traderId]);
         }
         if (config['redbull_watermelon_sold_by_trader']) {
-             assortCreator.createSingleAssortItem("66ccf66fc9162d12270bb181")
+             assortCreator.createSingleAssortItem("66ccf66fc9162d12270bb184")
                                      .addUnlimitedStackCount()
                                      .addBuyRestriction(config['redbull_watermelon_stock'])
                                      .addMoneyCost(Money.ROUBLES, config['redbull_watermelon_trader_price'])
