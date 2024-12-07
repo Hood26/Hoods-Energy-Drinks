@@ -140,7 +140,7 @@
     "starbucks_loot_jacket_weight": 150,
     "starbucks_loot_ration_supply_crate_weight": 150,
     "starbucks_loot_ground_cache_weight": 150,
-    "starbucks_loose_loot_multiplier": 0.18,
+    "starbucks_loose_loot_multiplier": 0.15,
 
     "c4_starburst_enable": true,
     "c4_starburst_effect_toggle": true,
@@ -154,7 +154,7 @@
     "c4_starburst_loot_jacket_weight": 150,
     "c4_starburst_loot_ration_supply_crate_weight": 150,
     "c4_starburst_loot_ground_cache_weight": 150,
-    "c4_starburst_loose_loot_multiplier": 0.18,
+    "c4_starburst_loose_loot_multiplier": 0.15,
 
     "rockstar_enable": true,
     "rockstar_effect_toggle": true,
@@ -168,7 +168,7 @@
     "rockstar_loot_jacket_weight": 150,
     "rockstar_loot_ration_supply_crate_weight": 150,
     "rockstar_loot_ground_cache_weight": 150,
-    "rockstar_loose_loot_multiplier": 0.18,
+    "rockstar_loose_loot_multiplier": 0.15,
 
     "redbull_enable": true,
     "redbull_effect_toggle": true,
@@ -182,7 +182,7 @@
     "redbull_loot_jacket_weight": 150,
     "redbull_loot_ration_supply_crate_weight": 150,
     "redbull_loot_ground_cache_weight": 150,
-    "redbull_loose_loot_multiplier": 0.18,
+    "redbull_loose_loot_multiplier": 0.15,
 
     "redbull_watermelon_enable": true,
     "redbull_watermelon_effect_toggle": true,
