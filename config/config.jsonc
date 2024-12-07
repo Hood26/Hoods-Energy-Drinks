@@ -1,18 +1,18 @@
 {
   // All values can be changed and will be reflected in game on server restart
-  // Mostly true or false values, but some are integers
+  // Mostly true or false values, but some are integers values
 
   "config": {
-    // if true, energy drink will be enabled in the game
+    // energy drink will be enabled in the game if true
     "monster_blue_enable": true,
-    // if true, energy drink will have skill effect buffs on consumption. skill effect buffs can be configured in buffs.ts
+    // energy drink will have skill effect buffs on consumption if true. skill effect buffs can be configured in buffs.ts
     "monster_blue_effect_toggle": true,
-    // if true, energy drink will be sold by Therapist
+    // energy drink will be sold by Therapist if true
     "monster_blue_sold_by_trader": true,
     // price from Therapist
     "monster_blue_trader_price": 40000,
     // price on the flea market
-    "monster_blue_flea_price": 55000,
+    "monster_blue_flea_price": 52500,
     // amount sold by Therapist
     "monster_blue_stock": 2,
     // loyalty level required to purchase from Therapist
@@ -61,7 +61,7 @@
     "monster_strawberry_enable": true,
     "monster_strawberry_effect_toggle": true,
     "monster_strawberry_sold_by_trader": true,
-    "monster_strawberry_trader_price": 65000,
+    "monster_strawberry_trader_price": 60000,
     "monster_strawberry_flea_price": 84000,
     "monster_strawberry_stock": 1,
     "monster_strawberry_loyalty_level": 3,
@@ -103,8 +103,8 @@
     "monster_punch_enable": true,
     "monster_punch_effect_toggle": true,
     "monster_punch_sold_by_trader": false,
-    "monster_punch_trader_price": 90000,
-    "monster_punch_flea_price": 120000,
+    "monster_punch_trader_price": 85000,
+    "monster_punch_flea_price": 100000,
     "monster_punch_stock": 1,
     "monster_punch_loyalty_level": 4,
     "monster_punch_loot_duffle_bag_weight": 115,
@@ -130,9 +130,9 @@
 
     "starbucks_enable": true,
     "starbucks_effect_toggle": true,
-    "starbucks_sold_by_trader": true,
-    "starbucks_trader_price": 65000,
-    "starbucks_flea_price": 85000,
+    "starbucks_sold_by_trader": false,
+    "starbucks_trader_price": 80000,
+    "starbucks_flea_price": 110000,
     "starbucks_stock": 1,
     "starbucks_loyalty_level": 3,
     "starbucks_loot_duffle_bag_weight": 150,
@@ -144,9 +144,9 @@
 
     "c4_starburst_enable": true,
     "c4_starburst_effect_toggle": true,
-    "c4_starburst_sold_by_trader": true,
-    "c4_starburst_trader_price": 65000,
-    "c4_starburst_flea_price": 85000,
+    "c4_starburst_sold_by_trader": false,
+    "c4_starburst_trader_price": 80000,
+    "c4_starburst_flea_price": 95000,
     "c4_starburst_stock": 1,
     "c4_starburst_loyalty_level": 3,
     "c4_starburst_loot_duffle_bag_weight": 150,
@@ -158,9 +158,9 @@
 
     "rockstar_enable": true,
     "rockstar_effect_toggle": true,
-    "rockstar_sold_by_trader": true,
-    "rockstar_trader_price": 65000,
-    "rockstar_flea_price": 85000,
+    "rockstar_sold_by_trader": false,
+    "rockstar_trader_price": 90000,
+    "rockstar_flea_price": 115000,
     "rockstar_stock": 1,
     "rockstar_loyalty_level": 3,
     "rockstar_loot_duffle_bag_weight": 150,
@@ -215,7 +215,7 @@
     "monster_lemonade_enable": true,
     "monster_lemonade_effect_toggle": true,
     "monster_lemonade_sold_by_trader": false,
-    "monster_lemonade_trader_price": 120000,
+    "monster_lemonade_trader_price": 125000,
     "monster_lemonade_flea_price": 150000,
     "monster_lemonade_stock": 1,
     "monster_lemonade_loyalty_level": 4,

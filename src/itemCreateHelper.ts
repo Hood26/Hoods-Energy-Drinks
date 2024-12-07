@@ -43,14 +43,7 @@ export class ItemCreateHelper {
                 Weight: 0.6,
                 foodUseTime: 5,
                 StimulatorBuffs: "monster_green",
-                effects_health: {
-                    Hydration: {
-                        value: 30
-                    },
-                    Energy: {
-                        value: 60
-                    }
-                },
+                effects_health: {},
                 effects_damage: {
 
                 }
@@ -93,17 +86,8 @@ export class ItemCreateHelper {
                 Weight: 0.6,
                 foodUseTime: 5,
                 StimulatorBuffs: "monster_blue",
-                effects_health: {
-                    Hydration: {
-                        value: 30
-                    },
-                    Energy: {
-                        value: 60
-                    }
-                },
-                effects_damage: {
-                    
-                }
+                effects_health: {},
+                effects_damage: {}
             },
             parentId: "5448e8d64bdc2dce718b4568",
             newId: "66ccf66fc9162d12270bb160", 
@@ -143,17 +127,8 @@ export class ItemCreateHelper {
                 },
                 foodUseTime: 5,
                 StimulatorBuffs: "monster_white",
-                effects_health: {
-                    Hydration: {
-                        value: 30
-                    },
-                    Energy: {
-                        value: 60
-                    }
-                },
-                effects_damage: {
-                    
-                }
+                effects_health: {},
+                effects_damage: {}
             },
             parentId: "5448e8d64bdc2dce718b4568",
             newId: "66ccf66fc9162d12270bb162", 
@@ -193,17 +168,8 @@ export class ItemCreateHelper {
                 Weight: 0.6,
                 foodUseTime: 5,
                 StimulatorBuffs: "monster_strawberry",
-                effects_health: {
-                    Hydration: {
-                        value: 40
-                    },
-                    Energy: {
-                        value: 80
-                    }
-                },
-                effects_damage: {
-                    
-                }
+                effects_health: {},
+                effects_damage: {}
             },
             parentId: "5448e8d64bdc2dce718b4568",
             newId: "66ccf66fc9162d12270bb163", 
@@ -243,17 +209,8 @@ export class ItemCreateHelper {
                 Weight: 0.6,
                 foodUseTime: 5,
                 StimulatorBuffs: "ghost",
-                effects_health: {
-                    Hydration: {
-                        value: 40
-                    },
-                    Energy: {
-                        value: 80
-                    }
-                },
-                effects_damage: {
-                    
-                }
+                effects_health: {},
+                effects_damage: {}
             },
             parentId: "5448e8d64bdc2dce718b4568",
             newId: "66ccf66fc9162d12270bb174", 
@@ -293,17 +250,8 @@ export class ItemCreateHelper {
                 Weight: 0.6,
                 foodUseTime: 5,
                 StimulatorBuffs: "nos",
-                effects_health: {
-                    Hydration: {
-                        value: 40
-                    },
-                    Energy: {
-                        value: 80
-                    }
-                },
-                effects_damage: {
-                    
-                }
+                effects_health: {},
+                effects_damage: {}
             },
             parentId: "5448e8d64bdc2dce718b4568",
             newId: "66ccf66fc9162d12270bb175", 
@@ -343,17 +291,8 @@ export class ItemCreateHelper {
                 Weight: 0.6,
                 foodUseTime: 5,
                 StimulatorBuffs: "monster_punch",
-                effects_health: {
-                    Hydration: {
-                        value: 40
-                    },
-                    Energy: {
-                        value: 80
-                    }
-                },
-                effects_damage: {
-                    
-                }
+                effects_health: {},
+                effects_damage: {}
             },
             parentId: "5448e8d64bdc2dce718b4568",
             newId: "66ccf66fc9162d12270bb176", 
@@ -393,17 +332,8 @@ export class ItemCreateHelper {
                 Weight: 0.6,
                 foodUseTime: 5,
                 StimulatorBuffs: "bang",
-                effects_health: {
-                    Hydration: {
-                        value: 40
-                    },
-                    Energy: {
-                        value: 80
-                    }
-                },
-                effects_damage: {
-                    
-                }
+                effects_health: {},
+                effects_damage: {}
             },
             parentId: "5448e8d64bdc2dce718b4568",
             newId: "66ccf66fc9162d12270bb177", 
@@ -443,17 +373,8 @@ export class ItemCreateHelper {
                 Weight: 0.6,
                 foodUseTime: 5,
                 StimulatorBuffs: "monster_doctor",
-                effects_health: {
-                    Hydration: {
-                        value: 40
-                    },
-                    Energy: {
-                        value: 80
-                    }
-                },
-                effects_damage: {
-                    
-                }
+                effects_health: {},
+                effects_damage: {}
             },
             parentId: "5448e8d64bdc2dce718b4568",
             newId: "66ccf66fc9162d12270bb178", 
@@ -495,20 +416,18 @@ export class ItemCreateHelper {
                 StimulatorBuffs: "monster_lemonade",
                 effects_health: {
                     Hydration: {
-                        value: 60
+                        value: 0
                     },
                     Energy: {
                         value: 100
                     }
                 },
-                effects_damage: {
-                    
-                }
+                effects_damage: {}
             },
             parentId: "5448e8d64bdc2dce718b4568",
             newId: "66ccf66fc9162d12270bb179", 
             fleaPriceRoubles: this.config['monster_lemonade_flea_price'],
-            handbookPriceRoubles: 135000,
+            handbookPriceRoubles: 140000,
             handbookParentId: "5b47574386f77428ca22b335",
             locales: {
                 "en": {
@@ -543,17 +462,8 @@ export class ItemCreateHelper {
                 Weight: 0.3,
                 foodUseTime: 5,
                 StimulatorBuffs: "starbucks",
-                effects_health: {
-                    Hydration: {
-                        value: 30
-                    },
-                    Energy: {
-                        value: 60
-                    }
-                },
-                effects_damage: {
-                    
-                }
+                effects_health: {},
+                effects_damage: {}
             },
             parentId: "5448e8d64bdc2dce718b4568",
             newId: "66ccf66fc9162d12270bb180", 
@@ -593,17 +503,8 @@ export class ItemCreateHelper {
                 Weight: 0.3,
                 foodUseTime: 5,
                 StimulatorBuffs: "c4_starburst",
-                effects_health: {
-                    Hydration: {
-                        value: 30
-                    },
-                    Energy: {
-                        value: 60
-                    }
-                },
-                effects_damage: {
-                    
-                }
+                effects_health: {},
+                effects_damage: {}
             },
             parentId: "5448e8d64bdc2dce718b4568",
             newId: "66ccf66fc9162d12270bb181", 
@@ -613,7 +514,7 @@ export class ItemCreateHelper {
             locales: {
                 "en": {
                     name: "C4 Starburst Energy Drink",
-                    shortName: "Starburst",
+                    shortName: "C4",
                     description: `C4 Starburst`
                 }
             },
@@ -643,17 +544,8 @@ export class ItemCreateHelper {
                 Weight: 0.3,
                 foodUseTime: 5,
                 StimulatorBuffs: "rockstar",
-                effects_health: {
-                    Hydration: {
-                        value: 30
-                    },
-                    Energy: {
-                        value: 60
-                    }
-                },
-                effects_damage: {
-                    
-                }
+                effects_health: {},
+                effects_damage: {}
             },
             parentId: "5448e8d64bdc2dce718b4568",
             newId: "66ccf66fc9162d12270bb182", 
@@ -693,22 +585,13 @@ export class ItemCreateHelper {
                 Weight: 0.3,
                 foodUseTime: 5,
                 StimulatorBuffs: "redbull",
-                effects_health: {
-                    Hydration: {
-                        value: 30
-                    },
-                    Energy: {
-                        value: 60
-                    }
-                },
-                effects_damage: {
-                    
-                }
+                effects_health: {},
+                effects_damage: {}
             },
             parentId: "5448e8d64bdc2dce718b4568",
             newId: "66ccf66fc9162d12270bb183", 
             fleaPriceRoubles: this.config['redbull_flea_price'],
-            handbookPriceRoubles: 65000,
+            handbookPriceRoubles: 85000,
             handbookParentId: "5b47574386f77428ca22b335",
             locales: {
                 "en": {
@@ -743,22 +626,13 @@ export class ItemCreateHelper {
                 Weight: 0.4,
                 foodUseTime: 5,
                 StimulatorBuffs: "redbull_watermelon",
-                effects_health: {
-                    Hydration: {
-                        value: 40
-                    },
-                    Energy: {
-                        value: 80
-                    }
-                },
-                effects_damage: {
-                    
-                }
+                effects_health: {},
+                effects_damage: {}
             },
             parentId: "5448e8d64bdc2dce718b4568",
             newId: "66ccf66fc9162d12270bb184", 
             fleaPriceRoubles: this.config['redbull_watermelon_flea_price'],
-            handbookPriceRoubles: 95000,
+            handbookPriceRoubles: 120000,
             handbookParentId: "5b47574386f77428ca22b335",
             locales: {
                 "en": {
@@ -776,6 +650,8 @@ export class ItemCreateHelper {
             },
             looseLootSpawnWeight: this.config["redbull_watermelon_loose_loot_multiplier"]
         }
+
+        this.loot.push(redbull_watermelon_energy);
 
         customItem.createItemFromClone(monester_energy);
         customItem.createItemFromClone(monester_energy_blue);
