@@ -2,7 +2,7 @@ import { DependencyContainer } from "tsyringe";
 import { CustomItemService } from "@spt/services/mod/CustomItemService";
 import { NewItemFromCloneDetails } from "@spt/models/spt/mod/NewItemDetails";
 import { DatabaseServer } from "@spt/servers/DatabaseServer";
-import { VFS } from "@spt/utils/VFS";
+import * as fs from 'fs';
 import { jsonc } from "jsonc";
 import path from "path";
 import { Buffs } from "./buffs";
@@ -19,8 +19,7 @@ export class ItemCreateHelper {
     // Create customs Items and store them in the database
     public createItems(container: DependencyContainer) {
         const db: DatabaseServer = container.resolve<DatabaseServer>("DatabaseServer");
-        const vfs: VFS = container.resolve<VFS>("VFS");
-        this.config = jsonc.parse(vfs.readFile(path.resolve(__dirname, "../config/config.jsonc"))).config;
+        this.config = jsonc.parse(fs.readFileSync(path.resolve(__dirname, "../config/config.jsonc"), "utf-8")).config;
         const customItem = container.resolve<CustomItemService>("CustomItemService");
         const info: Info = new Info();
         const buffs: Buffs = new Buffs();
@@ -650,16 +649,13 @@ export class ItemCreateHelper {
             },
             looseLootSpawnWeight: this.config["redbull_watermelon_loose_loot_multiplier"]
         }
-
         this.loot.push(redbull_watermelon_energy);
 
         customItem.createItemFromClone(monester_energy);
         customItem.createItemFromClone(monester_energy_blue);
         customItem.createItemFromClone(monester_energy_white);
         customItem.createItemFromClone(monester_energy_strawberry);
-        customItem.createItemFromClone(monester_energy_doctor);
         customItem.createItemFromClone(monester_energy_punch);
-        customItem.createItemFromClone(monester_energy_lemonade);
         customItem.createItemFromClone(nos_energy);
         customItem.createItemFromClone(bang_energy);
         customItem.createItemFromClone(ghost_energy);
@@ -668,5 +664,7 @@ export class ItemCreateHelper {
         customItem.createItemFromClone(rockstar_energy);
         customItem.createItemFromClone(redbull_energy);
         customItem.createItemFromClone(redbull_watermelon_energy);
+        customItem.createItemFromClone(monester_energy_doctor);
+        customItem.createItemFromClone(monester_energy_lemonade);
     }
 }

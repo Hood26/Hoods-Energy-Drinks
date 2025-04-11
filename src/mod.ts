@@ -10,7 +10,7 @@ import { HashUtil } from "@spt/utils/HashUtil";
 import { TraderHelper } from "./traderHelpers";
 import { ItemCreateHelper } from "./itemCreateHelper";
 import { FluentAssortConstructor as FluentAssortCreator } from "./fluentTraderAssortCreator";
-import { VFS } from "@spt/utils/VFS";
+import * as fs from 'fs';
 import { jsonc } from "jsonc";
 import path from "path";
 
@@ -34,10 +34,9 @@ class HoodsEnergyDrinks implements IPreSptLoadMod, IPostDBLoadMod
 
         // Get SPT code/data we need later
         const hashUtil: HashUtil = container.resolve<HashUtil>("HashUtil");
-        const vfs = container.resolve<VFS>("VFS")
 
         // Create helper class and use it to register our traders image/icon + set its stock refresh time
-        this.config = jsonc.parse(vfs.readFile(path.resolve(__dirname, "../config/config.jsonc")))
+        this.config = jsonc.parse(fs.readFileSync(path.resolve(__dirname, "../config/config.jsonc"), "utf-8"));
         this.hashUtil = hashUtil;
         this.traderHelper = new TraderHelper();
         this.fluentAssortCreator = new FluentAssortCreator(hashUtil, this.logger);
@@ -78,18 +77,7 @@ class HoodsEnergyDrinks implements IPreSptLoadMod, IPostDBLoadMod
             "sandbox_high"
         ];
 
-        //console.log(tables.locations["bigmap"].staticLoot["578f87a3245977356274f2cb"].itemDistribution[217])
-        //console.log(tables.locations["bigmap"].staticLoot["5d6fd13186f77424ad2a8c69"].itemDistribution)
         
-        //const items = tables.locations["bigmap"].staticLoot["5d6d2b5486f774785c2ba8ea"].itemDistribution
-        
-        //for (const item in items) {
-            //if (items[item].tpl == '5751435d24597720a27126d1') {
-                //console.log(item)
-                //console.log(items[item])
-            //}
-        //}
-
         const hall_of_fame_lvl_1 = tables.templates.items["63dbd45917fff4dee40fe16e"];
         const hall_of_fame_lvl_2 = tables.templates.items["65424185a57eea37ed6562e9"];
         const hall_of_fame_lvl_3 = tables.templates.items["6542435ea57eea37ed6562f0"];
@@ -105,9 +93,9 @@ class HoodsEnergyDrinks implements IPreSptLoadMod, IPostDBLoadMod
                     }
                 }
             });
-        }  
-            
-        // Thanks to RainbowPC and his Lots Of Loot mod, based on his code inserting items into loose loot spawns
+        }   
+         
+        // Thanks to RainbowPC and his Lots Of Loot mod, based on his code inserting items into loose loot spawns=
         for (const item of itemCreate.loot){
             const lootComposedKey = item.newId + '_composedkey';
             for(const map of maps) {
@@ -162,8 +150,8 @@ class HoodsEnergyDrinks implements IPreSptLoadMod, IPostDBLoadMod
                 }
             }
         }
+        
         this.logger.debug(`[${this.mod}] postDb Loaded`);
-
         this.logger.success("[Hoods Energy Drinks] Energy Drinks Loaded!");
     }
 }
