@@ -28,7 +28,7 @@ export class ItemCreateHelper {
             db.tableData.globals.config.Health.Effects.Stimulator.Buffs[item] = this.config[`${item}_effect_toggle`] ? buffs[`${item}_buffs`] : []
         }
 
-        const monester_energy: NewItemFromCloneDetails = {
+        const monster_energy: NewItemFromCloneDetails = {
             itemTplToClone: "5d40407c86f774318526545a",
             overrideProperties: {
                 Prefab: {
@@ -69,9 +69,9 @@ export class ItemCreateHelper {
             looseLootSpawnWeight: this.config["monster_green_loose_loot_multiplier"]
         }
 
-        this.loot.push(monester_energy);
+        this.loot.push(monster_energy);
 
-        const monester_energy_blue: NewItemFromCloneDetails = {
+        const monster_energy_blue: NewItemFromCloneDetails = {
             itemTplToClone: "5d40407c86f774318526545a",
             overrideProperties: {
                 Prefab: {
@@ -110,9 +110,9 @@ export class ItemCreateHelper {
             looseLootSpawnWeight: this.config["monster_blue_loose_loot_multiplier"]
         }
 
-        this.loot.push(monester_energy_blue);
+        this.loot.push(monster_energy_blue);
 
-        const monester_energy_white: NewItemFromCloneDetails = {
+        const monster_energy_white: NewItemFromCloneDetails = {
             itemTplToClone: "5d40407c86f774318526545a",
             overrideProperties: {
                 Prefab: {
@@ -151,9 +151,9 @@ export class ItemCreateHelper {
             looseLootSpawnWeight: this.config["monster_white_loose_loot_multiplier"]
         }
 
-        this.loot.push(monester_energy_white);
+        this.loot.push(monster_energy_white);
 
-        const monester_energy_strawberry: NewItemFromCloneDetails = {
+        const monster_energy_strawberry: NewItemFromCloneDetails = {
             itemTplToClone: "5d40407c86f774318526545a",
             overrideProperties: {
                 Prefab: {
@@ -192,7 +192,7 @@ export class ItemCreateHelper {
             looseLootSpawnWeight: this.config["monster_strawberry_loose_loot_multiplier"]
         }
 
-        this.loot.push(monester_energy_strawberry);
+        this.loot.push(monster_energy_strawberry);
 
         const ghost_energy: NewItemFromCloneDetails = {
             itemTplToClone: "5d40407c86f774318526545a",
@@ -276,7 +276,7 @@ export class ItemCreateHelper {
 
         this.loot.push(nos_energy);
 
-        const monester_energy_punch: NewItemFromCloneDetails = {
+        const monster_energy_punch: NewItemFromCloneDetails = {
             itemTplToClone: "5d40407c86f774318526545a",
             overrideProperties: {
                 Prefab: {
@@ -315,7 +315,7 @@ export class ItemCreateHelper {
             looseLootSpawnWeight: this.config["monster_punch_loose_loot_multiplier"]
         }
 
-        this.loot.push(monester_energy_punch);
+        this.loot.push(monster_energy_punch);
 
         const bang_energy: NewItemFromCloneDetails = {
             itemTplToClone: "5d40407c86f774318526545a",
@@ -358,7 +358,7 @@ export class ItemCreateHelper {
 
         this.loot.push(bang_energy);
 
-        const monester_energy_doctor: NewItemFromCloneDetails = {
+        const monster_energy_doctor: NewItemFromCloneDetails = {
             itemTplToClone: "5d40407c86f774318526545a",
             overrideProperties: {
                 Prefab: {
@@ -397,9 +397,9 @@ export class ItemCreateHelper {
             looseLootSpawnWeight: this.config["monster_doctor_loose_loot_multiplier"]
         }
 
-        this.loot.push(monester_energy_doctor);
+        this.loot.push(monster_energy_doctor);
 
-        const monester_energy_lemonade: NewItemFromCloneDetails = {
+        const monster_energy_lemonade: NewItemFromCloneDetails = {
             itemTplToClone: "5d40407c86f774318526545a",
             overrideProperties: {
                 Prefab: {
@@ -445,7 +445,7 @@ export class ItemCreateHelper {
             looseLootSpawnWeight: this.config["monster_lemonade_loose_loot_multiplier"]
         }
 
-        this.loot.push(monester_energy_lemonade);
+        this.loot.push(monster_energy_lemonade);
 
         const starbucks_energy: NewItemFromCloneDetails = {
             itemTplToClone: "5d40407c86f774318526545a",
@@ -570,101 +570,144 @@ export class ItemCreateHelper {
 
         this.loot.push(rockstar_energy);
 
-        const redbull_energy: NewItemFromCloneDetails = {
-            itemTplToClone: "5751496424597720a27126da",
+        const monster_energy_pacific_punch: NewItemFromCloneDetails = {
+            itemTplToClone: "5d40407c86f774318526545a",
             overrideProperties: {
                 Prefab: {
-                    path: "assets/redbull_energy.bundle",
+                    path: "assets/monster_energy_pacific_punch.bundle",
                     rcid: ""
                 },
+                Weight: 0.6,
                 UsePrefab: {
-                    path: "assets/redbull_energy_container.bundle",
+                    path: "assets/monster_energy_pacific_punch_container.bundle",
                     rcid: ""
                 },
-                Weight: 0.3,
                 foodUseTime: 5,
-                StimulatorBuffs: "redbull",
-                effects_health: {},
-                effects_damage: {}
-            },
-            parentId: "5448e8d64bdc2dce718b4568",
-            newId: "66ccf66fc9162d12270bb183", 
-            fleaPriceRoubles: this.config['redbull_flea_price'],
-            handbookPriceRoubles: 85000,
-            handbookParentId: "5b47574386f77428ca22b335",
-            locales: {
-                "en": {
-                    name: "Red Bull Energy Drink",
-                    shortName: "Red Bull",
-                    description: `Red Bull Energy Drink gives you Wiiings whenever you need them. Red Bull is a lightly carbonated energy drink with an impeccable blend of caffeine, taurine, B vitamins, real sugar and water. With 110 calories per 8.4 fl oz can, Red Bull is great for any occasion. While aiming for great heights during your workday, in your workouts or when gaming, why not crack open a refreshing can of Red Bull?.`
-                }
-            },
-            addToStaticLoot: {
-                "578f87a3245977356274f2cb": this.config["redbull_loot_duffle_bag_weight"],
-                "5909e4b686f7747f5b744fa4": this.config["redbull_loot_dead_scav_weight"],
-                "578f8778245977358849a9b5": this.config["redbull_loot_jacket_weight"],
-                "5d6fd13186f77424ad2a8c69": this.config["redbull_loot_ration_supply_crate_weight"],
-                "5d6d2b5486f774785c2ba8ea": this.config["redbull_loot_ground_cache_weight"],
-            },
-            looseLootSpawnWeight: this.config["redbull_loose_loot_multiplier"]
-        }
-
-        this.loot.push(redbull_energy);
-
-        const redbull_watermelon_energy: NewItemFromCloneDetails = {
-            itemTplToClone: "5751496424597720a27126da",
-            overrideProperties: {
-                Prefab: {
-                    path: "assets/redbull_watermelon_energy.bundle",
-                    rcid: ""
-                },
-                UsePrefab: {
-                    path: "assets/redbull_watermelon_energy_container.bundle",
-                    rcid: ""
-                },
-                Weight: 0.4,
-                foodUseTime: 5,
-                StimulatorBuffs: "redbull_watermelon",
+                StimulatorBuffs: "monster_white",
                 effects_health: {},
                 effects_damage: {}
             },
             parentId: "5448e8d64bdc2dce718b4568",
             newId: "66ccf66fc9162d12270bb184", 
-            fleaPriceRoubles: this.config['redbull_watermelon_flea_price'],
-            handbookPriceRoubles: 120000,
+            fleaPriceRoubles: this.config['monster_white_flea_price'],
+            handbookPriceRoubles: 55000,
             handbookParentId: "5b47574386f77428ca22b335",
             locales: {
                 "en": {
-                    name: "Red Bull Red Edition Watermelon Energy Drink",
-                    shortName: "Red Bull",
-                    description: `Red Bull Red Edition Watermelon Energy Drink gives you Wiiings whenever you need them. Red Bull Red Edition is a lightly carbonated energy drink with a blend of caffeine, taurine, B vitamins, real sugar and water, along with the taste of watermelon.`
+                    name: "Monster Pacific Punch Energy Drink",
+                    shortName: "Monster",
+                    description: `The light, refreshing citrus flavor of Zero Ultra has broken the rules of flavor. 10 calories, zero sugar, and a full load of our Monster Energy blend to keep the good times rolling.`
                 }
             },
             addToStaticLoot: {
-                "578f87a3245977356274f2cb": this.config["redbull_watermelon_loot_duffle_bag_weight"],
-                "5909e4b686f7747f5b744fa4": this.config["redbull_watermelon_loot_dead_scav_weight"],
-                "578f8778245977358849a9b5": this.config["redbull_watermelon_loot_jacket_weight"],
-                "5d6fd13186f77424ad2a8c69": this.config["redbull_watermelon_loot_ration_supply_crate_weight"],
-                "5d6d2b5486f774785c2ba8ea": this.config["redbull_watermelon_loot_ground_cache_weight"],
+                "578f87a3245977356274f2cb": this.config["monster_white_loot_duffle_bag_weight"],
+                "5909e4b686f7747f5b744fa4": this.config["monster_white_loot_dead_scav_weight"],
+                "578f8778245977358849a9b5": this.config["monster_white_loot_jacket_weight"],
+                "5d6fd13186f77424ad2a8c69": this.config["monster_white_loot_ration_supply_crate_weight"],
+                "5d6d2b5486f774785c2ba8ea": this.config["monster_white_loot_ground_cache_weight"],
             },
-            looseLootSpawnWeight: this.config["redbull_watermelon_loose_loot_multiplier"]
+            looseLootSpawnWeight: this.config["monster_white_loose_loot_multiplier"]
         }
-        this.loot.push(redbull_watermelon_energy);
 
-        customItem.createItemFromClone(monester_energy);
-        customItem.createItemFromClone(monester_energy_blue);
-        customItem.createItemFromClone(monester_energy_white);
-        customItem.createItemFromClone(monester_energy_strawberry);
-        customItem.createItemFromClone(monester_energy_punch);
+        this.loot.push(monster_energy_pacific_punch);
+
+        const ghost_energy_swedish_fish: NewItemFromCloneDetails = {
+            itemTplToClone: "5d40407c86f774318526545a",
+            overrideProperties: {
+                Prefab: {
+                    path: "assets/ghost_energy_swedish_fish.bundle",
+                    rcid: ""
+                },
+                Weight: 0.6,
+                UsePrefab: {
+                    path: "assets/ghost_energy_swedish_fish_container.bundle",
+                    rcid: ""
+                },
+                foodUseTime: 5,
+                StimulatorBuffs: "monster_white",
+                effects_health: {},
+                effects_damage: {}
+            },
+            parentId: "5448e8d64bdc2dce718b4568",
+            newId: "66ccf66fc9162d12270bb183", 
+            fleaPriceRoubles: this.config['monster_white_flea_price'],
+            handbookPriceRoubles: 55000,
+            handbookParentId: "5b47574386f77428ca22b335",
+            locales: {
+                "en": {
+                    name: "Ghost Swedish Fish Energy Drink",
+                    shortName: "Ghost",
+                    description: `The light, refreshing citrus flavor of Zero Ultra has broken the rules of flavor. 10 calories, zero sugar, and a full load of our Monster Energy blend to keep the good times rolling.`
+                }
+            },
+            addToStaticLoot: {
+                "578f87a3245977356274f2cb": this.config["monster_white_loot_duffle_bag_weight"],
+                "5909e4b686f7747f5b744fa4": this.config["monster_white_loot_dead_scav_weight"],
+                "578f8778245977358849a9b5": this.config["monster_white_loot_jacket_weight"],
+                "5d6fd13186f77424ad2a8c69": this.config["monster_white_loot_ration_supply_crate_weight"],
+                "5d6d2b5486f774785c2ba8ea": this.config["monster_white_loot_ground_cache_weight"],
+            },
+            looseLootSpawnWeight: this.config["monster_white_loose_loot_multiplier"]
+        }
+
+        this.loot.push(ghost_energy_swedish_fish);
+
+        const stalker_energy: NewItemFromCloneDetails = {
+            itemTplToClone: "5d40407c86f774318526545a",
+            overrideProperties: {
+                Prefab: {
+                    path: "assets/stalker_energy.bundle",
+                    rcid: ""
+                },
+                Weight: 0.6,
+                UsePrefab: {
+                    path: "assets/stalker_energy_container.bundle",
+                    rcid: ""
+                },
+                foodUseTime: 5,
+                StimulatorBuffs: "monster_white",
+                effects_health: {},
+                effects_damage: {}
+            },
+            parentId: "5448e8d64bdc2dce718b4568",
+            newId: "66ccf66fc9162d12270bb185", 
+            fleaPriceRoubles: this.config['monster_white_flea_price'],
+            handbookPriceRoubles: 55000,
+            handbookParentId: "5b47574386f77428ca22b335",
+            locales: {
+                "en": {
+                    name: "Original Stalker Energy Drink",
+                    shortName: "Stalker",
+                    description: `Rare energy drink originating from the Pripyat region. This is an excellent energy drink consisting of caffeine, taurine and a mixture of rejuvenating vitamins. Just the ticket when you're too tired to push forward!`
+                }
+            },
+            addToStaticLoot: {
+                "578f87a3245977356274f2cb": this.config["monster_white_loot_duffle_bag_weight"],
+                "5909e4b686f7747f5b744fa4": this.config["monster_white_loot_dead_scav_weight"],
+                "578f8778245977358849a9b5": this.config["monster_white_loot_jacket_weight"],
+                "5d6fd13186f77424ad2a8c69": this.config["monster_white_loot_ration_supply_crate_weight"],
+                "5d6d2b5486f774785c2ba8ea": this.config["monster_white_loot_ground_cache_weight"],
+            },
+            looseLootSpawnWeight: this.config["monster_white_loose_loot_multiplier"]
+        }
+
+        this.loot.push(stalker_energy);
+
+        customItem.createItemFromClone(monster_energy);
+        customItem.createItemFromClone(monster_energy_blue);
+        customItem.createItemFromClone(monster_energy_white);
+        customItem.createItemFromClone(monster_energy_strawberry);
+        customItem.createItemFromClone(monster_energy_punch);
         customItem.createItemFromClone(nos_energy);
         customItem.createItemFromClone(bang_energy);
         customItem.createItemFromClone(ghost_energy);
         customItem.createItemFromClone(starbucks_energy);
         customItem.createItemFromClone(c4_starburst_energy);
         customItem.createItemFromClone(rockstar_energy);
-        customItem.createItemFromClone(redbull_energy);
-        customItem.createItemFromClone(redbull_watermelon_energy);
-        customItem.createItemFromClone(monester_energy_doctor);
-        customItem.createItemFromClone(monester_energy_lemonade);
+        customItem.createItemFromClone(monster_energy_doctor);
+        customItem.createItemFromClone(monster_energy_lemonade);
+        customItem.createItemFromClone(monster_energy_pacific_punch);
+        customItem.createItemFromClone(ghost_energy_swedish_fish);
+        customItem.createItemFromClone(stalker_energy);
     }
 }

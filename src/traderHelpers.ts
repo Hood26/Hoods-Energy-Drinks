@@ -106,37 +106,45 @@ export class TraderHelper
                                      .addLoyaltyLevel(config['starbucks_loyalty_level'])
                                      .export(tables.traders[traderId]);
         }
-        if (config['rockstar_sold_by_trader']) {
-             assortCreator.createSingleAssortItem("66ccf66fc9162d12270bb181")
-                                     .addUnlimitedStackCount()
-                                     .addBuyRestriction(config['rockstar_stock'])
-                                     .addMoneyCost(Money.ROUBLES, config['rockstar_trader_price'])
-                                     .addLoyaltyLevel(config['rockstar_loyalty_level'])
-                                     .export(tables.traders[traderId]);
-        }
         if (config['c4_starburst_sold_by_trader']) {
-             assortCreator.createSingleAssortItem("66ccf66fc9162d12270bb182")
+             assortCreator.createSingleAssortItem("66ccf66fc9162d12270bb181")
                                      .addUnlimitedStackCount()
                                      .addBuyRestriction(config['c4_starburst_stock'])
                                      .addMoneyCost(Money.ROUBLES, config['c4_starburst_trader_price'])
                                      .addLoyaltyLevel(config['c4_starburst_loyalty_level'])
                                      .export(tables.traders[traderId]);
         }
-        if (config['redbull_sold_by_trader']) {
-             assortCreator.createSingleAssortItem("66ccf66fc9162d12270bb183")
-                                     .addUnlimitedStackCount()
-                                     .addBuyRestriction(config['redbull_stock'])
-                                     .addMoneyCost(Money.ROUBLES, config['redbull_trader_price'])
-                                     .addLoyaltyLevel(config['redbull_loyalty_level'])
-                                     .export(tables.traders[traderId]);
+        if (config['rockstar_sold_by_trader']) {
+          assortCreator.createSingleAssortItem("66ccf66fc9162d12270bb182")
+                                  .addUnlimitedStackCount()
+                                  .addBuyRestriction(config['rockstar_stock'])
+                                  .addMoneyCost(Money.ROUBLES, config['rockstar_trader_price'])
+                                  .addLoyaltyLevel(config['rockstar_loyalty_level'])
+                                  .export(tables.traders[traderId]);
         }
-        if (config['redbull_watermelon_sold_by_trader']) {
-             assortCreator.createSingleAssortItem("66ccf66fc9162d12270bb184")
-                                     .addUnlimitedStackCount()
-                                     .addBuyRestriction(config['redbull_watermelon_stock'])
-                                     .addMoneyCost(Money.ROUBLES, config['redbull_watermelon_trader_price'])
-                                     .addLoyaltyLevel(config['redbull_watermelon_loyalty_level'])
-                                     .export(tables.traders[traderId]);
+        if (config['ghost_swedish_fish_sold_by_trader']) {
+          assortCreator.createSingleAssortItem("66ccf66fc9162d12270bb183")
+                                  .addUnlimitedStackCount()
+                                  .addBuyRestriction(config['rockstar_stock'])
+                                  .addMoneyCost(Money.ROUBLES, config['rockstar_trader_price'])
+                                  .addLoyaltyLevel(config['rockstar_loyalty_level'])
+                                  .export(tables.traders[traderId]);
+        }
+        if (config['monster_pacific_punch_sold_by_trader']) {
+          assortCreator.createSingleAssortItem("66ccf66fc9162d12270bb184")
+                                  .addUnlimitedStackCount()
+                                  .addBuyRestriction(config['rockstar_stock'])
+                                  .addMoneyCost(Money.ROUBLES, config['rockstar_trader_price'])
+                                  .addLoyaltyLevel(config['rockstar_loyalty_level'])
+                                  .export(tables.traders[traderId]);
+        }
+        if (config['stalker_sold_by_trader']) {
+          assortCreator.createSingleAssortItem("66ccf66fc9162d12270bb185")
+                                  .addUnlimitedStackCount()
+                                  .addBuyRestriction(config['rockstar_stock'])
+                                  .addMoneyCost(Money.ROUBLES, config['rockstar_trader_price'])
+                                  .addLoyaltyLevel(config['rockstar_loyalty_level'])
+                                  .export(tables.traders[traderId]);
         }
      }
 }

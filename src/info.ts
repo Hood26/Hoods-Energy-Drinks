@@ -5,15 +5,16 @@ export class Info {
         'monster_white',
         'monster_strawberry',
         'ghost',
+        'ghost_swedish_fish',
         'nos',
         'monster_punch',
+        'monster_pacific_punch',
+        'stalker',
         'bang',
         'monster_doctor',
         'monster_lemonade',
         'starbucks',
         'c4_starburst',
-        'rockstar',
-        'redbull',
-        'redbull_watermelon'
+        'rockstar'
     ]
 }
