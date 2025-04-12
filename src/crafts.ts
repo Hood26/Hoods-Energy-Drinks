@@ -1,4 +1,5 @@
 export class Crafts {
+    // idk if I will add crafts ¯\_(ツ)_/¯
     public lemonade_craft =  {
             "_id": "lemonade_craft",
             "areaType": 8,

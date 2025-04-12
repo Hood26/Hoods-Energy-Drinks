@@ -4,7 +4,6 @@ import { IPreSptLoadMod } from "@spt/models/external/IPreSptLoadMod";
 import { IPostDBLoadMod } from "@spt/models/external/IPostDBLoadMod";
 import { ILogger } from "@spt/models/spt/utils/ILogger";
 import { DatabaseServer } from "@spt/servers/DatabaseServer";
-import { JsonUtil } from "@spt/utils/JsonUtil";
 import { ILocationData } from "@spt/models/spt/server/ILocations";
 import { HashUtil } from "@spt/utils/HashUtil";
 import { TraderHelper } from "./traderHelpers";
@@ -20,7 +19,6 @@ class HoodsEnergyDrinks implements IPreSptLoadMod, IPostDBLoadMod
     private logger: ILogger
     private traderHelper: TraderHelper
     private fluentAssortCreator: FluentAssortCreator
-    private hashUtil: HashUtil;
     public config: any;
 
     constructor() {
@@ -28,16 +26,10 @@ class HoodsEnergyDrinks implements IPreSptLoadMod, IPostDBLoadMod
     }
 
     public preSptLoad(container: DependencyContainer): void {
-        // Get a logger
+        const hashUtil: HashUtil = container.resolve<HashUtil>("HashUtil");
         this.logger = container.resolve<ILogger>("WinstonLogger");
         this.logger.debug(`[${this.mod}] preAki Loading... `);
-
-        // Get SPT code/data we need later
-        const hashUtil: HashUtil = container.resolve<HashUtil>("HashUtil");
-
-        // Create helper class and use it to register our traders image/icon + set its stock refresh time
         this.config = jsonc.parse(fs.readFileSync(path.resolve(__dirname, "../config/config.jsonc"), "utf-8"));
-        this.hashUtil = hashUtil;
         this.traderHelper = new TraderHelper();
         this.fluentAssortCreator = new FluentAssortCreator(hashUtil, this.logger);
 
@@ -45,25 +37,15 @@ class HoodsEnergyDrinks implements IPreSptLoadMod, IPostDBLoadMod
     
     public postDBLoad(container: DependencyContainer): void {
         this.logger.debug(`[${this.mod}] postDb Loading... `);
-
-        // Resolve SPT classes we'll use
         const databaseServer: DatabaseServer = container.resolve<DatabaseServer>("DatabaseServer");
-        //const configServer: ConfigServer = container.resolve<ConfigServer>("ConfigServer");
-        const jsonUtil: JsonUtil = container.resolve<JsonUtil>("JsonUtil");
-        // Creates and stores new gambling items in database
         const itemCreate = new ItemCreateHelper();
-
-        itemCreate.createItems(container)
-
-        // Get a reference to the database tables
+        //itemCreate.createItems(container)
+        itemCreate.buildItems(container)
         const tables = databaseServer.getTables();
-
-
-        // Add energy drinks to therapist
+        // Add desired energy drinks to therapist
         this.traderHelper.addSingleItemsToTrader(tables, '54cb57776803fa99248b456e', this.fluentAssortCreator, container, this.logger);
-
         const maps = [
-            "bigmap",     // customs
+            "bigmap",      // customs
             "factory4_day",
             "factory4_night",
             "woods",
@@ -73,16 +55,15 @@ class HoodsEnergyDrinks implements IPreSptLoadMod, IPostDBLoadMod
             "tarkovstreets",
             "lighthouse",
             "laboratory",
-            "sandbox",    // groundzero
-            "sandbox_high"
+            "sandbox",     // groundzero
+            "sandbox_high" // groundzero_lvl_20+
         ];
 
-        
+        // Add all energy drinks to all levels of Hall Of Fame
         const hall_of_fame_lvl_1 = tables.templates.items["63dbd45917fff4dee40fe16e"];
         const hall_of_fame_lvl_2 = tables.templates.items["65424185a57eea37ed6562e9"];
         const hall_of_fame_lvl_3 = tables.templates.items["6542435ea57eea37ed6562f0"];
         const hall_of_fame_all = [hall_of_fame_lvl_1, hall_of_fame_lvl_2, hall_of_fame_lvl_3];
-
         for (const item of itemCreate.loot){
             hall_of_fame_all.forEach((hall) => {
                 for (const slot of hall._props.Slots) {
@@ -150,7 +131,6 @@ class HoodsEnergyDrinks implements IPreSptLoadMod, IPostDBLoadMod
                 }
             }
         }
-        
         this.logger.debug(`[${this.mod}] postDb Loaded`);
         this.logger.success("[Hoods Energy Drinks] Energy Drinks Loaded!");
     }

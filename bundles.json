@@ -2,7 +2,7 @@
 {
     "manifest": [
         {
-            "key": "assets/monster_energy.bundle",
+            "key": "assets/monster_green.bundle",
             "dependencyKeys": [
                 "cubemaps",
 				"shaders",
@@ -10,7 +10,7 @@
             ]
         },
         {
-            "key": "assets/monster_energy_container.bundle",
+            "key": "assets/monster_green_container.bundle",
             "dependencyKeys": [
                 "cubemaps",
 				"shaders",
@@ -18,7 +18,7 @@
             ]
         },
         {
-            "key": "assets/monster_energy_blue.bundle",
+            "key": "assets/monster_blue.bundle",
             "dependencyKeys": [
                 "cubemaps",
 				"shaders",
@@ -26,7 +26,7 @@
             ]
         },
         {
-            "key": "assets/monster_energy_blue_container.bundle",
+            "key": "assets/monster_blue_container.bundle",
             "dependencyKeys": [
                 "cubemaps",
 				"shaders",
@@ -34,7 +34,7 @@
             ]
         },
         {
-            "key": "assets/monster_energy_white.bundle",
+            "key": "assets/monster_white.bundle",
             "dependencyKeys": [
                 "cubemaps",
 				"shaders",
@@ -42,7 +42,7 @@
             ]
         },
         {
-            "key": "assets/monster_energy_white_container.bundle",
+            "key": "assets/monster_white_container.bundle",
             "dependencyKeys": [
                 "cubemaps",
 				"shaders",
@@ -50,7 +50,7 @@
             ]
         },
         {
-            "key": "assets/monster_energy_strawberry.bundle",
+            "key": "assets/monster_strawberry.bundle",
             "dependencyKeys": [
                 "cubemaps",
 				"shaders",
@@ -58,7 +58,7 @@
             ]
         },
         {
-            "key": "assets/monster_energy_strawberry_container.bundle",
+            "key": "assets/monster_strawberry_container.bundle",
             "dependencyKeys": [
                 "cubemaps",
 				"shaders",
@@ -66,7 +66,7 @@
             ]
         },
         {
-            "key": "assets/monster_energy_doctor.bundle",
+            "key": "assets/monster_doctor.bundle",
             "dependencyKeys": [
                 "cubemaps",
 				"shaders",
@@ -74,7 +74,7 @@
             ]
         },
         {
-            "key": "assets/monster_energy_doctor_container.bundle",
+            "key": "assets/monster_doctor_container.bundle",
             "dependencyKeys": [
                 "cubemaps",
 				"shaders",
@@ -82,7 +82,7 @@
             ]
         },
         {
-            "key": "assets/monster_energy_punch.bundle",
+            "key": "assets/monster_punch.bundle",
             "dependencyKeys": [
                 "cubemaps",
 				"shaders",
@@ -90,7 +90,7 @@
             ]
         },
         {
-            "key": "assets/monster_energy_punch_container.bundle",
+            "key": "assets/monster_punch_container.bundle",
             "dependencyKeys": [
                 "cubemaps",
 				"shaders",
@@ -98,7 +98,7 @@
             ]
         },
         {
-            "key": "assets/monster_energy_lemonade.bundle",
+            "key": "assets/monster_lemonade.bundle",
             "dependencyKeys": [
                 "cubemaps",
 				"shaders",
@@ -106,7 +106,7 @@
             ]
         },
         {
-            "key": "assets/monster_energy_lemonade_container.bundle",
+            "key": "assets/monster_lemonade_container.bundle",
             "dependencyKeys": [
                 "cubemaps",
 				"shaders",
@@ -114,7 +114,7 @@
             ]
         },
         {
-            "key": "assets/nos_energy.bundle",
+            "key": "assets/nos.bundle",
             "dependencyKeys": [
                 "cubemaps",
 				"shaders",
@@ -122,7 +122,7 @@
             ]
         },
         {
-            "key": "assets/nos_energy_container.bundle",
+            "key": "assets/nos_container.bundle",
             "dependencyKeys": [
                 "cubemaps",
 				"shaders",
@@ -130,7 +130,7 @@
             ]
         },
         {
-            "key": "assets/bang_energy.bundle",
+            "key": "assets/bang.bundle",
             "dependencyKeys": [
                 "cubemaps",
 				"shaders",
@@ -138,7 +138,7 @@
             ]
         },
         {
-            "key": "assets/bang_energy_container.bundle",
+            "key": "assets/bang_container.bundle",
             "dependencyKeys": [
                 "cubemaps",
 				"shaders",
@@ -146,7 +146,7 @@
             ]
         },
         {
-            "key": "assets/ghost_energy.bundle",
+            "key": "assets/ghost.bundle",
             "dependencyKeys": [
                 "cubemaps",
 				"shaders",
@@ -154,7 +154,7 @@
             ]
         },
         {
-            "key": "assets/ghost_energy_container.bundle",
+            "key": "assets/ghost_container.bundle",
             "dependencyKeys": [
                 "cubemaps",
 				"shaders",
@@ -162,7 +162,7 @@
             ]
         },
         {
-            "key": "assets/starbucks_energy.bundle",
+            "key": "assets/starbucks.bundle",
             "dependencyKeys": [
                 "cubemaps",
 				"shaders",
@@ -170,7 +170,7 @@
             ]
         },
         {
-            "key": "assets/starbucks_energy_container.bundle",
+            "key": "assets/starbucks_container.bundle",
             "dependencyKeys": [
                 "cubemaps",
 				"shaders",
@@ -178,7 +178,7 @@
             ]
         },
         {
-            "key": "assets/c4_starburst_energy.bundle",
+            "key": "assets/c4_starburst.bundle",
             "dependencyKeys": [
                 "cubemaps",
 				"shaders",
@@ -186,7 +186,7 @@
             ]
         },
         {
-            "key": "assets/c4_starburst_energy_container.bundle",
+            "key": "assets/c4_starburst_container.bundle",
             "dependencyKeys": [
                 "cubemaps",
 				"shaders",
@@ -194,7 +194,7 @@
             ]
         },
         {
-            "key": "assets/rockstar_energy.bundle",
+            "key": "assets/rockstar.bundle",
             "dependencyKeys": [
                 "cubemaps",
 				"shaders",
@@ -202,7 +202,7 @@
             ]
         },
         {
-            "key": "assets/rockstar_energy_container.bundle",
+            "key": "assets/rockstar_container.bundle",
             "dependencyKeys": [
                 "cubemaps",
 				"shaders",
@@ -210,7 +210,7 @@
             ]
         },
         {
-            "key": "assets/ghost_energy_swedish_fish.bundle",
+            "key": "assets/ghost_swedish_fish.bundle",
             "dependencyKeys": [
                 "cubemaps",
 				"shaders",
@@ -218,7 +218,7 @@
             ]
         },
         {
-            "key": "assets/ghost_energy_swedish_fish_container.bundle",
+            "key": "assets/ghost_swedish_fish_container.bundle",
             "dependencyKeys": [
                 "cubemaps",
 				"shaders",
@@ -226,7 +226,7 @@
             ]
         },
         {
-            "key": "assets/monster_energy_pacific_punch.bundle",
+            "key": "assets/monster_pacific_punch.bundle",
             "dependencyKeys": [
                 "cubemaps",
 				"shaders",
@@ -234,7 +234,7 @@
             ]
         },
         {
-            "key": "assets/monster_energy_pacific_punch_container.bundle",
+            "key": "assets/monster_pacific_punch_container.bundle",
             "dependencyKeys": [
                 "cubemaps",
 				"shaders",
@@ -242,7 +242,7 @@
             ]
         },
         {
-            "key": "assets/stalker_energy.bundle",
+            "key": "assets/stalker.bundle",
             "dependencyKeys": [
                 "cubemaps",
 				"shaders",
@@ -250,7 +250,7 @@
             ]
         },
         {
-            "key": "assets/stalker_energy_container.bundle",
+            "key": "assets/stalker_container.bundle",
             "dependencyKeys": [
                 "cubemaps",
 				"shaders",
