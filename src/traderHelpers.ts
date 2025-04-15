@@ -6,6 +6,8 @@ import { Money } from "@spt/models/enums/Money";
 import * as fs from 'fs';
 import { jsonc } from "jsonc";
 import path from "path";
+import type { itemProps } from "./info";
+import { DrinkInfo } from "./info"; 
 
 
 export class TraderHelper
@@ -17,134 +19,17 @@ export class TraderHelper
      */
      public addSingleItemsToTrader(tables: IDatabaseTables, traderId: string, assortCreator: FluentAssortCreator, container: DependencyContainer, logger: ILogger) : void {
         const config = jsonc.parse(fs.readFileSync(path.resolve(__dirname, "../config/config.jsonc"), "utf-8")).config;
-        
-        if (config['monster_blue_sold_by_trader']) {
-             assortCreator.createSingleAssortItem("66ccf66fc9162d12270bb160")
-                                     .addUnlimitedStackCount()
-                                     .addBuyRestriction(config['monster_blue_stock'])
-                                     .addMoneyCost(Money.ROUBLES, config['monster_blue_trader_price'])
-                                     .addLoyaltyLevel(config['monster_blue_loyalty_level'])
-                                     .export(tables.traders[traderId]);
-        }
-        if (config['monster_green_sold_by_trader']) {
-             assortCreator.createSingleAssortItem("66ccf66fc9162d12270bb161")
-                                     .addUnlimitedStackCount()
-                                     .addBuyRestriction(config['monster_green_stock'])
-                                     .addMoneyCost(Money.ROUBLES, config['monster_green_trader_price'])
-                                     .addLoyaltyLevel(config['monster_green_loyalty_level'])
-                                     .export(tables.traders[traderId]);
-        }
-        if (config['monster_white_sold_by_trader']) {
-             assortCreator.createSingleAssortItem("66ccf66fc9162d12270bb162")
-                                     .addUnlimitedStackCount()
-                                     .addBuyRestriction(config['monster_white_stock'])
-                                     .addMoneyCost(Money.ROUBLES, config['monster_white_trader_price'])
-                                     .addLoyaltyLevel(config['monster_white_loyalty_level'])
-                                     .export(tables.traders[traderId]);
-        }
-        if (config['monster_strawberry_sold_by_trader']) {
-             assortCreator.createSingleAssortItem("66ccf66fc9162d12270bb163")
-                                     .addUnlimitedStackCount()
-                                     .addBuyRestriction(config['monster_strawberry_stock'])
-                                     .addMoneyCost(Money.ROUBLES, config['monster_strawberry_trader_price'])
-                                     .addLoyaltyLevel(config['monster_strawberry_loyalty_level'])
-                                     .export(tables.traders[traderId]);
-        }
-        if (config['ghost_sold_by_trader']) {
-             assortCreator.createSingleAssortItem("66ccf66fc9162d12270bb174")
-                                     .addUnlimitedStackCount()
-                                     .addBuyRestriction(config['ghost_stock'])
-                                     .addMoneyCost(Money.ROUBLES, config['ghost_trader_price'])
-                                     .addLoyaltyLevel(config['ghost_loyalty_level'])
-                                     .export(tables.traders[traderId]);
-        }
-        if (config['nos_sold_by_trader']) {
-             assortCreator.createSingleAssortItem("66ccf66fc9162d12270bb175")
-                                     .addUnlimitedStackCount()
-                                     .addBuyRestriction(config['nos_stock'])
-                                     .addMoneyCost(Money.ROUBLES, config['nos_trader_price'])
-                                     .addLoyaltyLevel(config['nos_loyalty_level'])
-                                     .export(tables.traders[traderId]);
-        }
-        if (config['monster_punch_sold_by_trader']) {
-             assortCreator.createSingleAssortItem("66ccf66fc9162d12270bb176")
-                                     .addUnlimitedStackCount()
-                                     .addBuyRestriction(config['monster_punch_stock'])
-                                     .addMoneyCost(Money.ROUBLES, config['monster_punch_trader_price'])
-                                     .addLoyaltyLevel(config['monster_punch_loyalty_level'])
-                                     .export(tables.traders[traderId]);
-        }
-        if (config['bang_sold_by_trader']) {
-             assortCreator.createSingleAssortItem("66ccf66fc9162d12270bb177")
-                                     .addUnlimitedStackCount()
-                                     .addBuyRestriction(config['bang_stock'])
-                                     .addMoneyCost(Money.ROUBLES, config['bang_trader_price'])
-                                     .addLoyaltyLevel(config['bang_loyalty_level'])
-                                     .export(tables.traders[traderId]);
-        }
-        if (config['monster_doctor_sold_by_trader']) {
-             assortCreator.createSingleAssortItem("66ccf66fc9162d12270bb178")
-                                     .addUnlimitedStackCount()
-                                     .addBuyRestriction(config['monster_doctor_stock'])
-                                     .addMoneyCost(Money.ROUBLES, config['monster_doctor_trader_price'])
-                                     .addLoyaltyLevel(config['monster_doctor_loyalty_level'])
-                                     .export(tables.traders[traderId]);
-        }
-        if (config['monster_lemonade_sold_by_trader']) {
-             assortCreator.createSingleAssortItem("66ccf66fc9162d12270bb179")
-                                     .addUnlimitedStackCount()
-                                     .addBuyRestriction(config['monster_lemonade_stock'])
-                                     .addMoneyCost(Money.ROUBLES, config['monster_lemonade_trader_price'])
-                                     .addLoyaltyLevel(config['monster_lemonade_loyalty_level'])
-                                     .export(tables.traders[traderId]);
-        }
-        if (config['starbucks_sold_by_trader']) {
-             assortCreator.createSingleAssortItem("66ccf66fc9162d12270bb180")
-                                     .addUnlimitedStackCount()
-                                     .addBuyRestriction(config['starbucks_stock'])
-                                     .addMoneyCost(Money.ROUBLES, config['starbucks_trader_price'])
-                                     .addLoyaltyLevel(config['starbucks_loyalty_level'])
-                                     .export(tables.traders[traderId]);
-        }
-        if (config['c4_starburst_sold_by_trader']) {
-             assortCreator.createSingleAssortItem("66ccf66fc9162d12270bb181")
-                                     .addUnlimitedStackCount()
-                                     .addBuyRestriction(config['c4_starburst_stock'])
-                                     .addMoneyCost(Money.ROUBLES, config['c4_starburst_trader_price'])
-                                     .addLoyaltyLevel(config['c4_starburst_loyalty_level'])
-                                     .export(tables.traders[traderId]);
-        }
-        if (config['rockstar_sold_by_trader']) {
-          assortCreator.createSingleAssortItem("66ccf66fc9162d12270bb182")
-                                  .addUnlimitedStackCount()
-                                  .addBuyRestriction(config['rockstar_stock'])
-                                  .addMoneyCost(Money.ROUBLES, config['rockstar_trader_price'])
-                                  .addLoyaltyLevel(config['rockstar_loyalty_level'])
-                                  .export(tables.traders[traderId]);
-        }
-        if (config['ghost_swedish_fish_sold_by_trader']) {
-          assortCreator.createSingleAssortItem("66ccf66fc9162d12270bb183")
-                                  .addUnlimitedStackCount()
-                                  .addBuyRestriction(config['rockstar_stock'])
-                                  .addMoneyCost(Money.ROUBLES, config['rockstar_trader_price'])
-                                  .addLoyaltyLevel(config['rockstar_loyalty_level'])
-                                  .export(tables.traders[traderId]);
-        }
-        if (config['monster_pacific_punch_sold_by_trader']) {
-          assortCreator.createSingleAssortItem("66ccf66fc9162d12270bb184")
-                                  .addUnlimitedStackCount()
-                                  .addBuyRestriction(config['rockstar_stock'])
-                                  .addMoneyCost(Money.ROUBLES, config['rockstar_trader_price'])
-                                  .addLoyaltyLevel(config['rockstar_loyalty_level'])
-                                  .export(tables.traders[traderId]);
-        }
-        if (config['stalker_sold_by_trader']) {
-          assortCreator.createSingleAssortItem("66ccf66fc9162d12270bb185")
-                                  .addUnlimitedStackCount()
-                                  .addBuyRestriction(config['rockstar_stock'])
-                                  .addMoneyCost(Money.ROUBLES, config['rockstar_trader_price'])
-                                  .addLoyaltyLevel(config['rockstar_loyalty_level'])
-                                  .export(tables.traders[traderId]);
+        const info: Record<string, itemProps> = DrinkInfo;
+
+        for (const [key, value] of Object.entries(info)) {
+          if (config[`${key}_sold_by_trader`]) {
+               assortCreator.createSingleAssortItem(value._id)
+                                   .addUnlimitedStackCount()
+                                   .addBuyRestriction(config[`${key}_stock`])
+                                   .addMoneyCost(Money.ROUBLES, config[`${key}_trader_price`])
+                                   .addLoyaltyLevel(config[`${key}_loyalty_level`])
+                                   .export(tables.traders[traderId]);
+          }
         }
      }
 }
