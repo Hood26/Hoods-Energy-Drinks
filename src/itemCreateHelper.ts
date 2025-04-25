@@ -23,7 +23,7 @@ export class ItemCreateHelper {
 
         for (const [key, value] of Object.entries(info)) {
             db.tableData.globals.config.Health.Effects.Stimulator.Buffs[key] = this.config[`${key}_effect_toggle`] ? buffs[`${key}_buffs`] : []
-
+            
             const item: NewItemFromCloneDetails = {
                 itemTplToClone: "5d40407c86f774318526545a",
                 overrideProperties: {
@@ -35,6 +35,7 @@ export class ItemCreateHelper {
                         path: `assets/${key}_container.bundle`,
                         rcid: ""
                     },
+                    DiscardLimit: -1,
                     Weight: 0.6,
                     foodUseTime: 5,
                     StimulatorBuffs: key,

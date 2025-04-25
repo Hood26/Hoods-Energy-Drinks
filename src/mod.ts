@@ -4,6 +4,9 @@ import { IPreSptLoadMod } from "@spt/models/external/IPreSptLoadMod";
 import { IPostDBLoadMod } from "@spt/models/external/IPostDBLoadMod";
 import { ILogger } from "@spt/models/spt/utils/ILogger";
 import { DatabaseServer } from "@spt/servers/DatabaseServer";
+import { IRagfairConfig } from "@spt/models/spt/config/IRagfairConfig";
+import { ConfigServer } from "@spt/servers/ConfigServer";
+import { ConfigTypes } from "@spt/models/enums/ConfigTypes";
 import { ILocationData } from "@spt/models/spt/server/ILocations";
 import { HashUtil } from "@spt/utils/HashUtil";
 import { TraderHelper } from "./traderHelpers";
@@ -12,6 +15,7 @@ import { FluentAssortConstructor as FluentAssortCreator } from "./fluentTraderAs
 import * as fs from 'fs';
 import { jsonc } from "jsonc";
 import path from "path";
+import { DrinkInfo, itemProps } from "./info";
 
 class HoodsEnergyDrinks implements IPreSptLoadMod, IPostDBLoadMod
 {
@@ -29,7 +33,7 @@ class HoodsEnergyDrinks implements IPreSptLoadMod, IPostDBLoadMod
         const hashUtil: HashUtil = container.resolve<HashUtil>("HashUtil");
         this.logger = container.resolve<ILogger>("WinstonLogger");
         this.logger.debug(`[${this.mod}] preAki Loading... `);
-        this.config = jsonc.parse(fs.readFileSync(path.resolve(__dirname, "../config/config.jsonc"), "utf-8"));
+        this.config = jsonc.parse(fs.readFileSync(path.resolve(__dirname, "../config/config.jsonc"), "utf-8")).config;
         this.traderHelper = new TraderHelper();
         this.fluentAssortCreator = new FluentAssortCreator(hashUtil, this.logger);
 
@@ -38,12 +42,14 @@ class HoodsEnergyDrinks implements IPreSptLoadMod, IPostDBLoadMod
     public postDBLoad(container: DependencyContainer): void {
         this.logger.debug(`[${this.mod}] postDb Loading... `);
         const databaseServer: DatabaseServer = container.resolve<DatabaseServer>("DatabaseServer");
+        const configServer = container.resolve<ConfigServer>("ConfigServer");
+        const ragfairConfig = configServer.getConfig<IRagfairConfig>(ConfigTypes.RAGFAIR);
+        const info: Record<string, itemProps> = DrinkInfo;
         const itemCreate = new ItemCreateHelper();
-        //itemCreate.createItems(container)
-        itemCreate.buildItems(container)
         const tables = databaseServer.getTables();
-        // Add desired energy drinks to therapist
+        itemCreate.buildItems(container)
         this.traderHelper.addSingleItemsToTrader(tables, '54cb57776803fa99248b456e', this.fluentAssortCreator, container, this.logger);
+
         const maps = [
             "bigmap",      // customs
             "factory4_day",
@@ -58,6 +64,13 @@ class HoodsEnergyDrinks implements IPreSptLoadMod, IPostDBLoadMod
             "sandbox",     // groundzero
             "sandbox_high" // groundzero_lvl_20+
         ];
+
+        // flea ban energy drinks
+        for (const [key, value] of Object.entries(info)) {
+            if (this.config[`${key}_flea_banned`]) {
+                ragfairConfig.dynamic.blacklist.custom.push(value._id);
+            }
+        }
 
         // Add all energy drinks to all levels of Hall Of Fame
         const hall_of_fame_lvl_1 = tables.templates.items["63dbd45917fff4dee40fe16e"];
@@ -76,7 +89,7 @@ class HoodsEnergyDrinks implements IPreSptLoadMod, IPostDBLoadMod
             });
         }   
          
-        // Thanks to RainbowPC and his Lots Of Loot mod, based on his code inserting items into loose loot spawns=
+        // Thanks to RainbowPC and his Lots Of Loot mod, based on his code inserting items into loose loot spawns
         for (const item of itemCreate.loot){
             const lootComposedKey = item.newId + '_composedkey';
             for(const map of maps) {
@@ -113,6 +126,7 @@ class HoodsEnergyDrinks implements IPreSptLoadMod, IPostDBLoadMod
         }
         
         //console.log(tables.locations["bigmap"].staticLoot["578f87a3245977356274f2cb"].itemDistribution) // Drawer
+        //console.log(tables.locations["bigmap"].staticLoot["578f87a3245977356274f2cb"].itemDistribution[0].tpl)
         for (const item of itemCreate.loot){
             for(const map of maps){
                 const mapStaticLoot = tables.locations[map].staticLoot;
