@@ -36,7 +36,6 @@ class HoodsEnergyDrinks implements IPreSptLoadMod, IPostDBLoadMod
         this.config = jsonc.parse(fs.readFileSync(path.resolve(__dirname, "../config/config.jsonc"), "utf-8")).config;
         this.traderHelper = new TraderHelper();
         this.fluentAssortCreator = new FluentAssortCreator(hashUtil, this.logger);
-
     }
     
     public postDBLoad(container: DependencyContainer): void {

@@ -47,7 +47,7 @@ export const DrinkInfo: Record<string, itemProps> = {
         _id: '66ccf66fc9162d12270bb183',
         name: 'Ghost Swedish Fish Energy Drink',
         shortName: 'Ghost',
-        desc: `The light, refreshing citrus flavor of Zero Ultra has broken the rules of flavor. 10 calories, zero sugar, and a full load of our Monster Energy blend to keep the good times rolling.`,
+        desc: `Ghost Energy is the fully transparent, fully loaded energy drink we have all been waiting for. Our legendary energy drink features no sugar, no artificial colors, and authentic Strawbango Margarita flavor. It contains 200mg of Natural Caffeine from coffee beans, which has been found anecdotally to deliver a smooth, feel-good energy with less jitters and no crash when compared to other forms of caffeine.`,
     },
     'monster_punch': {
         _id: '66ccf66fc9162d12270bb176',
@@ -57,7 +57,7 @@ export const DrinkInfo: Record<string, itemProps> = {
     },
     'stalker': {
         _id: '66ccf66fc9162d12270bb185',
-        name: 'Original Stalker Energy Drink',
+        name: 'Original S.T.A.L.K.E.R. Energy Drink',
         shortName: 'Stalker',
         desc: `Rare energy drink originating from the Pripyat region. This is an excellent energy drink consisting of caffeine, taurine and a mixture of rejuvenating vitamins. Just the ticket when you're too tired to push forward!`,
     },
@@ -89,7 +89,13 @@ export const DrinkInfo: Record<string, itemProps> = {
         _id: '66ccf66fc9162d12270bb184',
         name: 'Monster Pacific Punch Energy Drink',
         shortName: 'Monster',
-        desc: `The light, refreshing citrus flavor of Zero Ultra has broken the rules of flavor. 10 calories, zero sugar, and a full load of our Monster Energy blend to keep the good times rolling.`,
+        desc: `A carbonated classic fruit punch with our Monster Energy blend, Pacific Punch will help put wind in your sails and keep you steady on course, no matter how rough the seas.`,
+    },
+    'ghost_peaches': {
+        _id: '66ccf66fc9162d12270bb17a',
+        name: 'Ghost Peaches Energy Drink',
+        shortName: 'Ghost',
+        desc: `Ghost Energy is the fully transparent, fully loaded energy drink we have all been waiting for. Our legendary energy drink features no sugar, no artificial colors, and authentic Strawbango Margarita flavor. It contains 200mg of Natural Caffeine from coffee beans, which has been found anecdotally to deliver a smooth, feel-good energy with less jitters and no crash when compared to other forms of caffeine.`,
     },
     'monster_doctor': {
         _id: '66ccf66fc9162d12270bb178',

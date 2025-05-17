@@ -16,10 +16,36 @@ export class ItemCreateHelper {
 
     public buildItems(container: DependencyContainer) {
         const db: DatabaseServer = container.resolve<DatabaseServer>("DatabaseServer");
-        this.config = jsonc.parse(fs.readFileSync(path.resolve(__dirname, "../config/config.jsonc"), "utf-8")).config;
         const customItem = container.resolve<CustomItemService>("CustomItemService");
         const info: Record<string, itemProps> = DrinkInfo;
         const buffs: Buffs = new Buffs();
+        this.config = jsonc.parse(fs.readFileSync(path.resolve(__dirname, "../config/config.jsonc"), "utf-8")).config;
+        db.tableData.globals.config.Health.Effects.Stimulator.Buffs['test_buffs'] = buffs['test_buffs'];
+
+        const testItem: NewItemFromCloneDetails = {
+            itemTplToClone: "5d40407c86f774318526545a",
+            overrideProperties: {
+                DiscardLimit: -1,
+                Weight: 0.6,
+                foodUseTime: 5,
+                StimulatorBuffs: 'test_buffs',
+                effects_health: {},
+                effects_damage: {}
+            },
+            parentId: "5448e8d64bdc2dce718b4568",
+            newId: '681aae12d8eabbadf3a6127c', 
+            fleaPriceRoubles: 9999,
+            handbookPriceRoubles: 9999,
+            handbookParentId: "5b47574386f77428ca22b335",
+            locales: {
+                "en": {
+                    name: 'Test Item',
+                    shortName: 'Test',
+                    description: 'Test'
+                }
+            },
+        }
+        customItem.createItemFromClone(testItem);
 
         for (const [key, value] of Object.entries(info)) {
             db.tableData.globals.config.Health.Effects.Stimulator.Buffs[key] = this.config[`${key}_effect_toggle`] ? buffs[`${key}_buffs`] : []
