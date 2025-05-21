@@ -127,27 +127,41 @@ class HoodsEnergyDrinks implements IPreSptLoadMod, IPostDBLoadMod
             }
         }
         
+
         for (const item of itemCreate.loot){
             for(const map of maps){
                 const mapStaticLoot = tables.locations[map].staticLoot;
-                const staticLootProbabilities = item.addToStaticLoot; ''
+                const staticLootProbabilities = item.addToStaticLoot;
                 for(const [lootContainer, probability] of Object.entries(staticLootProbabilities)){
-                    
+                    const max_energy_prob: number = this.getProbability(mapStaticLoot, lootContainer, '5751496424597720a27126da', map);
+
                     try{
-                        let max_energy_prob: number = 1;
                         mapStaticLoot[lootContainer].itemDistribution.push({
                             "tpl": item.newId,
-                            "relativeProbability": probability * max_energy_prob
+                            "relativeProbability": Math.ceil(probability * max_energy_prob)
                         });
                     } catch (e){
-                        this.logger.debug("Could not add " + item.newId + " to container " + lootContainer + " on map " + map)
+                        this.logger.debug("[Hoods Energy Drinks] Could not add " + item.newId + " to container " + lootContainer + " on map " + map)
                     }
                 }
             }
-            break;
         }
         this.logger.debug(`[${this.mod}] postDb Loaded`);
         this.logger.success("[Hoods Energy Drinks] Energy Drinks Loaded!");
+    }
+
+    private getProbability(mapStaticLoot: any, lootContainer: string, _id: string, map: string): number{
+
+        for (const [key, value] of Object.entries(mapStaticLoot)){
+            if (key != lootContainer) continue;
+
+            for (let i = 0; i < value.itemDistribution.length; i++) {
+                if (mapStaticLoot[key].itemDistribution[i].tpl == _id) {
+                    return mapStaticLoot[key].itemDistribution[i].relativeProbability;
+                }
+            }
+        }
+        return 300; // base value for containers that don't have max energy drinks in their loot pool
     }
 }
 
