@@ -100,7 +100,7 @@ class HoodsEnergyDrinks implements IPreSptLoadMod, IPostDBLoadMod
                     if (name == map) {
                         for (const point of mapdata.looseLoot.spawnpoints) {
                             for (const itm of point.template.Items) {
-                                if (itm._tpl == "5751435d24597720a27126d1") { // Max Energy energy drink
+                                if (itm._tpl == "5751496424597720a27126da") { // Hot Rod Energy Drink
                                     const originalItemID = itm._id;
                                     let originRelativeProb: any;
                                     for (const dist of point.itemDistribution) {
@@ -133,12 +133,11 @@ class HoodsEnergyDrinks implements IPreSptLoadMod, IPostDBLoadMod
                 const mapStaticLoot = tables.locations[map].staticLoot;
                 const staticLootProbabilities = item.addToStaticLoot;
                 for(const [lootContainer, probability] of Object.entries(staticLootProbabilities)){
-                    const max_energy_prob: number = this.getProbability(mapStaticLoot, lootContainer, '5751496424597720a27126da', map);
-
+                    const hot_rod_energy_prob: number = this.getProbability(mapStaticLoot, lootContainer, '5751496424597720a27126da', map);
                     try{
                         mapStaticLoot[lootContainer].itemDistribution.push({
                             "tpl": item.newId,
-                            "relativeProbability": Math.ceil(probability * max_energy_prob)
+                            "relativeProbability": Math.ceil(probability * hot_rod_energy_prob)
                         });
                     } catch (e){
                         this.logger.debug("[Hoods Energy Drinks] Could not add " + item.newId + " to container " + lootContainer + " on map " + map)

@@ -33,10 +33,10 @@
     "monster_blue_stock": 2,
     // loyalty level required to purchase from Therapist
     "monster_blue_loyalty_level": 1,
-    // weighted chance to find energy drink in duffle bag: (Max Energy Drink spawn weight * multiplier)
-    // Uses Max Energy spawn weight as a base value so if you set the multiplier to 1.0, the energy drink will have the same spawn chance as a Max Energy Drink
-    // examples: 1.0 = the same spawn chance as a Max Energy Drink
-    //           0.25 = 75% rarer than a Max Energy Drink
+    // weighted chance to find energy drink in duffle bag: (Hot Rod Energy Drink spawn weight * multiplier)
+    // Uses Hot Rod Energy spawn weight as a base value so if you set the multiplier to 1.0, the energy drink will have the same spawn chance as a Hot Rod Energy Drink
+    // examples: 1.0 = the same spawn chance as a Hot Rod Energy Drink
+    //           0.25 = 75% rarer than a Hot Rod Energy Drink
     "monster_blue_loot_duffle_bag_multiplier": 0.4,
     // weighted chance for energy drink to spawn in dead scavs. lower = rarer, higher = common
     "monster_blue_loot_dead_scav_multiplier": 0.4,
@@ -46,7 +46,7 @@
     "monster_blue_loot_ration_supply_crate_multiplier": 0.4,
     // weighted chance for energy drink to spawn in ground caches. lower = rarer, higher = common
     "monster_blue_loot_ground_cache_multiplier": 0.4,
-    // 0.3 multiplied by max energy drink spawn chance = custom energy drink spawn chance in loose loot around the map 
+    // 0.3 multiplied by Hot Rod Energy Drink spawn chance = custom energy drink spawn chance in loose loot around the map 
     "monster_blue_loose_loot_multiplier": 0.4,
 
     "monster_green_enable": true,
