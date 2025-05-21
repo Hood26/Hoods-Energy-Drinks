@@ -3,7 +3,6 @@
   // Mostly true or false values, but some are integer values
 
   "config": {
-
     // enabling alternative buffs will force all energy drinks to have the same price and buffs.
     // - This option offers a quick way to make the energy drinks more like regular tarkov items and less overpowering.
     // - all other config options will still be used
@@ -14,7 +13,6 @@
     "alternate_flea_price": 25000,
     // if enable_alternate_buffs is true energy drinks will use alternate handbook price
     "alternate_handbook_price": 20000,
-
 
 
     // energy drink will be enabled in the game if true

@@ -17,6 +17,7 @@ import { jsonc } from "jsonc";
 import path from "path";
 import { DrinkInfo, itemProps } from "./info";
 
+// I'm just here so I won't get fined
 class HoodsEnergyDrinks implements IPreSptLoadMod, IPostDBLoadMod
 {
     private mod: string
@@ -63,14 +64,14 @@ class HoodsEnergyDrinks implements IPreSptLoadMod, IPostDBLoadMod
             "sandbox",     // groundzero
             "sandbox_high" // groundzero_lvl_20+
         ];
-
+        
         // flea ban energy drinks
         for (const [key, value] of Object.entries(info)) {
             if (this.config[`${key}_flea_banned`]) {
                 ragfairConfig.dynamic.blacklist.custom.push(value._id);
             }
         }
-
+        
         // Add all energy drinks to all levels of Hall Of Fame
         const hall_of_fame_ids = [
             tables.templates.items["63dbd45917fff4dee40fe16e"], // lvl 1
@@ -126,44 +127,14 @@ class HoodsEnergyDrinks implements IPreSptLoadMod, IPostDBLoadMod
             }
         }
         
-        //for (const item of Object.entries(tables.locations["interchange"].staticLoot["578f87a3245977356274f2cb"].itemDistribution)) {
-            //if (item[1].tpl == "5751435d24597720a27126d1") { // Max Energy energy drink
-                //const max_energy_prob = tables.locations[map].staticLoot[lootContainer].itemDistribution[0].relativeProbability;
-            //}
-        //}
-
-        /*
-        for (const item of Object.entries(tables.locations["tarkovstreets"].staticLoot["578f87a3245977356274f2cb"].itemDistribution)) {
-            if (item[1].tpl == "5751435d24597720a27126d1") { // Max Energy energy drink
-                console.log(item[1]);
-            }
-            if (item[1].tpl == "60b0f93284c20f0feb453da7") { // rat cola
-                console.log(item[1]);
-            }
-        }
-        return
-        */
-
-        //console.log(tables.locations["bigmap"].staticLoot["578f87a3245977356274f2cb"].itemDistribution) // Drawer
-        //console.log(tables.locations["bigmap"].staticLoot["578f87a3245977356274f2cb"].itemDistribution[0].tpl)
         for (const item of itemCreate.loot){
             for(const map of maps){
                 const mapStaticLoot = tables.locations[map].staticLoot;
                 const staticLootProbabilities = item.addToStaticLoot; ''
                 for(const [lootContainer, probability] of Object.entries(staticLootProbabilities)){
-                    //console.log(lootContainer);
-                    //console.log(map);
-                    //console.log(tables.locations[map].staticLoot[lootContainer].itemDistribution[0]);
                     
                     try{
                         let max_energy_prob: number = 1;
-                        for (const item of Object.entries(tables.locations[map].staticLoot[lootContainer].itemDistribution)) {
-                            if (item[1].tpl == "5751435d24597720a27126d1" && lootContainer == '578f87a3245977356274f2cb') { // Max Energy energy drink
-                                max_energy_prob = item[1].relativeProbability;
-                                //console.log(max_energy_prob);
-                                //console.log(probability);
-                            }
-                        }
                         mapStaticLoot[lootContainer].itemDistribution.push({
                             "tpl": item.newId,
                             "relativeProbability": probability * max_energy_prob
@@ -171,7 +142,6 @@ class HoodsEnergyDrinks implements IPreSptLoadMod, IPostDBLoadMod
                     } catch (e){
                         this.logger.debug("Could not add " + item.newId + " to container " + lootContainer + " on map " + map)
                     }
-
                 }
             }
             break;
