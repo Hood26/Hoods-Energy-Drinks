@@ -26,7 +26,7 @@ export class TraderHelper
                assortCreator.createSingleAssortItem(value._id)
                                    .addUnlimitedStackCount()
                                    .addBuyRestriction(config[`${key}_stock`])
-                                   .addMoneyCost(Money.ROUBLES, config[`${key}_trader_price`])
+                                   .addMoneyCost(Money.ROUBLES, (config[`enable_alternate_buffs`] ? config[`alternate_trader_price`] : config[`${key}_trader_price`]))
                                    .addLoyaltyLevel(config[`${key}_loyalty_level`])
                                    .export(tables.traders[traderId]);
           }

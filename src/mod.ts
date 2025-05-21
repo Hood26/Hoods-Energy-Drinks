@@ -72,12 +72,14 @@ class HoodsEnergyDrinks implements IPreSptLoadMod, IPostDBLoadMod
         }
 
         // Add all energy drinks to all levels of Hall Of Fame
-        const hall_of_fame_lvl_1 = tables.templates.items["63dbd45917fff4dee40fe16e"];
-        const hall_of_fame_lvl_2 = tables.templates.items["65424185a57eea37ed6562e9"];
-        const hall_of_fame_lvl_3 = tables.templates.items["6542435ea57eea37ed6562f0"];
-        const hall_of_fame_all = [hall_of_fame_lvl_1, hall_of_fame_lvl_2, hall_of_fame_lvl_3];
+        const hall_of_fame_ids = [
+            tables.templates.items["63dbd45917fff4dee40fe16e"], // lvl 1
+            tables.templates.items["65424185a57eea37ed6562e9"], // lvl 2
+            tables.templates.items["6542435ea57eea37ed6562f0"]  // lvl 3
+        ];
+
         for (const item of itemCreate.loot){
-            hall_of_fame_all.forEach((hall) => {
+            hall_of_fame_ids.forEach((hall) => {
                 for (const slot of hall._props.Slots) {
                     for (const filter of slot._props.filters) {
                         if (!filter.Filter.includes(item.newId)) {
@@ -124,18 +126,47 @@ class HoodsEnergyDrinks implements IPreSptLoadMod, IPostDBLoadMod
             }
         }
         
+        //for (const item of Object.entries(tables.locations["interchange"].staticLoot["578f87a3245977356274f2cb"].itemDistribution)) {
+            //if (item[1].tpl == "5751435d24597720a27126d1") { // Max Energy energy drink
+                //const max_energy_prob = tables.locations[map].staticLoot[lootContainer].itemDistribution[0].relativeProbability;
+            //}
+        //}
+
+        /*
+        for (const item of Object.entries(tables.locations["tarkovstreets"].staticLoot["578f87a3245977356274f2cb"].itemDistribution)) {
+            if (item[1].tpl == "5751435d24597720a27126d1") { // Max Energy energy drink
+                console.log(item[1]);
+            }
+            if (item[1].tpl == "60b0f93284c20f0feb453da7") { // rat cola
+                console.log(item[1]);
+            }
+        }
+        return
+        */
+
         //console.log(tables.locations["bigmap"].staticLoot["578f87a3245977356274f2cb"].itemDistribution) // Drawer
         //console.log(tables.locations["bigmap"].staticLoot["578f87a3245977356274f2cb"].itemDistribution[0].tpl)
         for (const item of itemCreate.loot){
             for(const map of maps){
                 const mapStaticLoot = tables.locations[map].staticLoot;
-                const staticLootProbabilities = item.addToStaticLoot;
+                const staticLootProbabilities = item.addToStaticLoot; ''
                 for(const [lootContainer, probability] of Object.entries(staticLootProbabilities)){
-
+                    //console.log(lootContainer);
+                    //console.log(map);
+                    //console.log(tables.locations[map].staticLoot[lootContainer].itemDistribution[0]);
+                    
                     try{
+                        let max_energy_prob: number = 1;
+                        for (const item of Object.entries(tables.locations[map].staticLoot[lootContainer].itemDistribution)) {
+                            if (item[1].tpl == "5751435d24597720a27126d1" && lootContainer == '578f87a3245977356274f2cb') { // Max Energy energy drink
+                                max_energy_prob = item[1].relativeProbability;
+                                //console.log(max_energy_prob);
+                                //console.log(probability);
+                            }
+                        }
                         mapStaticLoot[lootContainer].itemDistribution.push({
                             "tpl": item.newId,
-                            "relativeProbability": probability
+                            "relativeProbability": probability * max_energy_prob
                         });
                     } catch (e){
                         this.logger.debug("Could not add " + item.newId + " to container " + lootContainer + " on map " + map)
@@ -143,6 +174,7 @@ class HoodsEnergyDrinks implements IPreSptLoadMod, IPostDBLoadMod
 
                 }
             }
+            break;
         }
         this.logger.debug(`[${this.mod}] postDb Loaded`);
         this.logger.success("[Hoods Energy Drinks] Energy Drinks Loaded!");
