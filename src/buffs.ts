@@ -1720,7 +1720,7 @@ export class Buffs {
             "Delay": 0,
             "Duration": 800,
             "SkillName": "Endurance",
-            "Value": 30
+            "Value": 50
         },
         {
             "AbsoluteValue": true,
@@ -1729,7 +1729,7 @@ export class Buffs {
             "Delay": 0,
             "Duration": 800,
             "SkillName": "Strength",
-            "Value": 30
+            "Value": 50
         },
         {
             "BuffType": "SkillRate",
@@ -1738,7 +1738,25 @@ export class Buffs {
             "Duration": 800,
             "AbsoluteValue": true,
             "SkillName": "StressResistance",
-            "Value": 30,
+            "Value": 50,
+        },
+        {
+            "AbsoluteValue": true,
+            "BuffType": "SkillRate",
+            "Chance": 1,
+            "Delay": 0,
+            "Duration": 800,
+            "SkillName": "AimDrills",
+            "Value": 50
+        },
+        {
+            "AbsoluteValue": true,
+            "BuffType": "SkillRate",
+            "Chance": 1,
+            "Delay": 0,
+            "Duration": 800,
+            "SkillName": "MagDrills",
+            "Value": 50
         },
         {
             "AbsoluteValue": true,
@@ -1747,7 +1765,7 @@ export class Buffs {
             "Delay": 0,
             "Duration": 800,
             "SkillName": "HeavyVests",
-            "Value": 30
+            "Value": 50
         },
         {
             "AbsoluteValue": true,
@@ -1756,7 +1774,16 @@ export class Buffs {
             "Delay": 0,
             "Duration": 800,
             "SkillName": "LightVests",
-            "Value": 30
+            "Value": 50
+        },
+        {
+            "AbsoluteValue": false,
+            "BuffType": "WeightLimit",
+            "Chance": 1,
+            "Delay": 1,
+            "Duration": 800,
+            "SkillName": "",
+            "Value": 0.30
         },
         {
             "AbsoluteValue": false,
@@ -1765,7 +1792,7 @@ export class Buffs {
             "Delay": 0,
             "Duration": 800,
             "SkillName": "",
-            "Value": -0.20
+            "Value": -0.15
           },
           {
             "AbsoluteValue": true,
@@ -1783,7 +1810,7 @@ export class Buffs {
             "Delay": 800,
             "Duration": 200,
             "SkillName": "Health",
-            "Value": -15
+            "Value": -30
         },
         {
             "AbsoluteValue": true,
@@ -1792,9 +1819,18 @@ export class Buffs {
             "Delay": 800,
             "Duration": 200,
             "SkillName": "Vitality",
-            "Value": -15
+            "Value": -30
         },
-          {
+        {
+            "AbsoluteValue": true,
+            "BuffType": "HealthRate",
+            "Chance": 1,
+            "Delay": 800,
+            "Duration": 800,
+            "SkillName": "",
+            "Value": -0.1
+        },
+        {
             "AbsoluteValue": true,
             "BuffType": "EnergyRate",
             "Chance": 1,
@@ -2059,7 +2095,7 @@ export class Buffs {
             "Delay": 1,
             "Duration": 600,
             "SkillName": "",
-            "Value": 0.03
+            "Value": 0.05
         },
         {
             "AbsoluteValue": false,
@@ -2068,7 +2104,7 @@ export class Buffs {
             "Delay": 0,
             "Duration": 600,
             "SkillName": "",
-            "Value": -0.03
+            "Value": -0.01
         },
         {
             "AbsoluteValue": true,
@@ -2134,7 +2170,7 @@ export class Buffs {
             "Delay": 0,
             "Duration": 600,
             "SkillName": "",
-            "Value": 1.0
+            "Value": 0.84
         },
         {
             "AbsoluteValue": true,
@@ -2143,7 +2179,7 @@ export class Buffs {
             "Delay": 0,
             "Duration": 600,
             "SkillName": "",
-            "Value": 20
+            "Value": 25
         },
         {
             "AbsoluteValue": true,
