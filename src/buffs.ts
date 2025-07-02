@@ -1,6 +1,6 @@
 export class Buffs {
 
-    // all energy drinks will use this buff if alterative buffs enables in config
+    // all energy drinks will use this buff if alterative buffs enabled in config
     public alternate_buffs = [
         {
             "AbsoluteValue": true,

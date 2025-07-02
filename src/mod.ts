@@ -9,12 +9,12 @@ import { ConfigServer } from "@spt/servers/ConfigServer";
 import { ConfigTypes } from "@spt/models/enums/ConfigTypes";
 import { ILocationData } from "@spt/models/spt/server/ILocations";
 import { HashUtil } from "@spt/utils/HashUtil";
-import { TraderHelper } from "./traderHelpers";
+import { TraderHelper } from "./traderHelper";
 import { ItemCreateHelper } from "./itemCreateHelper";
 import { FluentAssortConstructor as FluentAssortCreator } from "./fluentTraderAssortCreator";
-import * as fs from 'fs';
+import * as fs from 'node:fs';
+import path from "node:path";
 import { jsonc } from "jsonc";
-import path from "path";
 import { DrinkInfo, itemProps } from "./info";
 
 // I'm just here so I won't get fined
@@ -34,21 +34,22 @@ class HoodsEnergyDrinks implements IPreSptLoadMod, IPostDBLoadMod
         const hashUtil: HashUtil = container.resolve<HashUtil>("HashUtil");
         this.logger = container.resolve<ILogger>("WinstonLogger");
         this.logger.debug(`[${this.mod}] preAki Loading... `);
-        this.config = jsonc.parse(fs.readFileSync(path.resolve(__dirname, "../config/config.jsonc"), "utf-8")).config;
         this.traderHelper = new TraderHelper();
         this.fluentAssortCreator = new FluentAssortCreator(hashUtil, this.logger);
     }
     
     public postDBLoad(container: DependencyContainer): void {
         this.logger.debug(`[${this.mod}] postDb Loading... `);
+        const configPath = path.resolve(__dirname, "../config/config.jsonc");
+        this.config = jsonc.parse(fs.readFileSync(configPath, "utf-8"));
         const databaseServer: DatabaseServer = container.resolve<DatabaseServer>("DatabaseServer");
         const configServer = container.resolve<ConfigServer>("ConfigServer");
         const ragfairConfig = configServer.getConfig<IRagfairConfig>(ConfigTypes.RAGFAIR);
         const info: Record<string, itemProps> = DrinkInfo;
         const itemCreate = new ItemCreateHelper();
         const tables = databaseServer.getTables();
-        itemCreate.buildItems(container)
-        this.traderHelper.addSingleItemsToTrader(tables, '54cb57776803fa99248b456e', this.fluentAssortCreator, container, this.logger);
+        itemCreate.buildItems(container, this.config)
+        this.traderHelper.addSingleItemsToTrader(tables, '54cb57776803fa99248b456e', this.fluentAssortCreator, container, this.logger, this.config);
 
         const maps = [
             "bigmap",      // customs
